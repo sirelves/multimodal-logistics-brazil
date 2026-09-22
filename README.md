@@ -13,10 +13,13 @@ network, algorithms, Monte Carlo, tests and the SVG plotting.
 
 1. There is **no algorithmic novelty to claim**: at this scale exact textbook
    methods (Pareto label correcting, min-cost flow, Monte Carlo + CVaR) solve
-   every case in milliseconds. A contribution, if any, is the *coupled model*
-   (monthly Pareto front + seasonal capacitated flow + interruptions with
-   recourse) for the MT corridors — to be confirmed by a systematic literature
-   search.
+   every case in milliseconds. A structured search (~2,450 records screened, 35
+   papers, all DOIs verified — [`docs/litsearch/`](docs/litsearch)) found no work
+   combining the three layers, but multi-objective + CVaR on soybean flows
+   (Marto et al. 2026), stochastic recourse in a Brazilian soybean chain (Reis et
+   al. 2023) and re-routing after disruption in the Brazilian network (L'Her et al.
+   2024) all exist. What survives as new is **seasonal capacity inside the
+   optimization**, coupled to the front and to recourse, on the MT corridors.
 2. In the model, **export terminals bind before inland links**: new railways
    (Ferrogrão, Rumo extension) lower the *average* cost by 4–7% but leave the
    *marginal* cost and the export ceiling unchanged; +50% terminal capacity raises

@@ -11,7 +11,7 @@ Every result carries a tag:
 Numbers are generalized costs in R$/t (freight + handling + R$0.05/t/h × hours),
 Sorriso (MT) → Shanghai, unless stated.
 
-## 0. Is there an algorithmic contribution?
+## 0. Is there a contribution?
 
 **No new algorithm.** Label-correcting Pareto search (Hansen 1980, Martins 1984),
 successive-shortest-path min-cost flow (Ahuja et al. 1993) and Monte Carlo with
@@ -19,11 +19,19 @@ CVaR (Rockafellar & Uryasev 2000) are textbook, and at this scale (23 nodes,
 2–5 routes per front) exact methods are instantaneous: nothing here needs a
 cleverer algorithm. **KNOWN.**
 
-What could be a contribution is the **model**: the three layers (multi-objective
-front per month, seasonal capacitated flow, stochastic interruptions with
-recourse) coupled on the MT corridors, with open, tested code. The Brazil papers
-found are static single-objective LP/MIP allocations (`literature-review.md`),
-but the search was not systematic. **SPECULATIVE until checked.**
+A structured search (~2,450 records screened, 35 papers kept, 36/36 DOIs verified;
+`literature-review.md` and `litsearch/`) found **no work combining the three
+layers**, but it did find, and this study must not claim otherwise:
+
+- multi-objective + **CVaR on soybean/corn intermodal flows** — Marto et al. (2026);
+- **stochastic recourse in a Brazilian soybean chain** — Reis et al. (2023);
+- **re-routing after link disruption in the Brazilian export network** — L'Her et al. (2024);
+- **river level → barge convoy size on the Madeira** — Garcia et al. (2022).
+
+What no screened paper puts inside the optimization is **seasonal capacity**
+(low water, harvest peaks) coupled to the multi-objective front and to disruption
+recourse with tail risk, on the MT corridors. That is the surviving claim.
+**VERIFIED (absence of evidence)**: no Scopus/WoS, Brazilian theses under-indexed.
 
 ## 1. Correctness
 

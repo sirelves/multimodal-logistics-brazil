@@ -1,0 +1,57 @@
+source,query_string,hits_reported,hits_screened,screening_note
+OpenAlex API,soybean intermodal Brazil optimization,240,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,soja intermodal otimização Mato Grosso,168,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,Arco Norte logistics optimization,297,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,grain export corridor Brazil stochastic,276,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,multimodal freight disruption Brazil,1008,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,robust optimization soybean logistics Brazil,1669,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,hidrovia Madeira seca logística soja,147,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,Ferrogrão modelo,178,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,multi-objective multimodal routing agricultural,10938,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,CVaR freight routing disruption,109,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,stochastic multimodal network design grain,26912,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,BR-163 logística modelo,4121,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,soybean transportation network model Brazil,8660,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,grain logistics Brazil mixed integer programming,384,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,Tapajós waterway soybean transport,91,91,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,multimodal transport low water river capacity stochastic,1764,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,soybean supply chain Brazil uncertainty optimization,4609,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,intermodal grain transport seasonal capacity,730,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,escoamento soja otimização rede transporte,1073,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,multi-objective soybean logistics Brazil,2349,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,soybean export Brazil port capacity seasonality model,1098,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,Brazil highway BR-163 disruption reliability freight model,21,21,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,waterway drought grain barge capacity optimization,109,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,soybean corridor risk analysis Brazil rail waterway scenario,102,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,two-stage stochastic intermodal agricultural commodity rerouting,38,38,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,conditional value at risk agricultural supply chain transport Brazil,7311,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,time-varying capacity multimodal network flow seasonal agricultural,3328,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,Ferrogrão railway impact model soybean freight,18,18,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,Pareto multi-objective intermodal freight cost time reliability,380,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+OpenAlex API,grain transport network resilience disruption recourse model,741,100,top 100 titles+abstracts screened by keyword filter (Brazil/agri/multimodal/model + >=2 of the 3 elements) then read
+Semantic Scholar API,soybean intermodal Brazil optimization,"rate-limited (HTTP 429), no results returned",0,partial run; OpenAlex covered the same strings
+Semantic Scholar API,soja intermodal otimização Mato Grosso,"rate-limited (HTTP 429), no results returned",0,partial run; OpenAlex covered the same strings
+Semantic Scholar API,Arco Norte logistics optimization,"rate-limited (HTTP 429), no results returned",0,partial run; OpenAlex covered the same strings
+Semantic Scholar API,grain export corridor Brazil stochastic,11,11,partial run; OpenAlex covered the same strings
+Semantic Scholar API,multimodal freight disruption Brazil,95,95,partial run; OpenAlex covered the same strings
+Semantic Scholar API,robust optimization soybean logistics Brazil,"rate-limited (HTTP 429), no results returned",0,partial run; OpenAlex covered the same strings
+Semantic Scholar API,hidrovia Madeira seca logística soja,"rate-limited (HTTP 429), no results returned",0,partial run; OpenAlex covered the same strings
+Semantic Scholar API,Ferrogrão modelo,625068,100,partial run; OpenAlex covered the same strings
+Semantic Scholar API,multi-objective multimodal routing agricultural,"rate-limited (HTTP 429), no results returned",0,partial run; OpenAlex covered the same strings
+Semantic Scholar API,CVaR freight routing disruption,274,100,partial run; OpenAlex covered the same strings
+Semantic Scholar API,stochastic multimodal network design grain,"rate-limited (HTTP 429), no results returned",0,partial run; OpenAlex covered the same strings
+Web search (Google/Scholar/SciELO/BDTD/repositories),otimização estocástica escoamento soja Mato Grosso corredores exportação dissertação,~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Web search (Google/Scholar/SciELO/BDTD/repositories),"""Arco Norte"" soja otimização modelo transporte multimodal capacidade sazonal",~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Web search (Google/Scholar/SciELO/BDTD/repositories),stochastic programming soybean Brazil transportation network recourse disruption river low water,~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Web search (Google/Scholar/SciELO/BDTD/repositories),CVaR conditional value at risk freight transportation network design disruption intermodal,~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Web search (Google/Scholar/SciELO/BDTD/repositories),"""Two-Stage Stochastic Linear Programming Model for Tactical Planning in the Soybean Supply Chain"" Brazil",~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Web search (Google/Scholar/SciELO/BDTD/repositories),multi-objective optimization soybean export routes Brazil cost time risk Pareto,~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Web search (Google/Scholar/SciELO/BDTD/repositories),"BDTD tese ""programação estocástica"" OR ""otimização multiobjetivo"" logística grãos hidrovia Brasil",~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Web search (Google/Scholar/SciELO/BDTD/repositories),"""Miritituba"" OR ""Tapajós"" OR ""Madeira"" waterway barge soybean optimization model water level seasonality capacity",~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Web search (Google/Scholar/SciELO/BDTD/repositories),"""comboio"" barcaças formação otimização nível do rio hidrovia Madeira modelo matemático soja",~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Web search (Google/Scholar/SciELO/BDTD/repositories),Mississippi River low water barge grain transportation disruption stochastic optimization model rerouting,~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Web search (Google/Scholar/SciELO/BDTD/repositories),Rhine low water inland waterway transport modal shift stochastic optimization model bulk cargo capacity,~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Web search (Google/Scholar/SciELO/BDTD/repositories),Péra Caixeta-Filho modelo otimização logística soja milho sazonalidade capacidade portos ESALQ-LOG,~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Web search (Google/Scholar/SciELO/BDTD/repositories),"""soybean"" Brazil transport ""risk"" OR ""reliability"" network model road disruption rainfall BR-163 quantitative",~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Web search (Google/Scholar/SciELO/BDTD/repositories),Brazil agricultural transport network natural hazard disruption rerouting cost increase 10% model study,~8-10 results returned,10,all returned links inspected; promising items resolved via Crossref/OpenAlex
+Crossref API (verification),DOI resolution of 36 candidate DOIs,36,36,all DOIs listed in papers.csv resolved in Crossref with matching title/venue/year
