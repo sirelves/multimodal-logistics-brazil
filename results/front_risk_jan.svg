@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" width="760" height="540" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="760" height="540" fill="#fcfcfb"/>
+<text x="84" y="24" text-anchor="start" font-size="16" fill="#0b0b0b"><tspan font-weight="600">January: expected cost vs tail cost of each Pareto route</tspan></text>
+<text x="84" y="42" text-anchor="start" font-size="12" fill="#52514e">Each route of the (cost, time, risk) front followed as a fixed plan; 16,384 sampled trips each.</text>
+<defs><clipPath id="plot"><rect x="84" y="56" width="652" height="350"/></clipPath></defs>
+<line x1="84" y1="56" x2="84" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="84" y="424" text-anchor="middle" font-size="12" fill="#52514e">500</text>
+<line x1="192.7" y1="56" x2="192.7" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="192.7" y="424" text-anchor="middle" font-size="12" fill="#52514e">520</text>
+<line x1="301.3" y1="56" x2="301.3" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="301.3" y="424" text-anchor="middle" font-size="12" fill="#52514e">540</text>
+<line x1="410" y1="56" x2="410" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="410" y="424" text-anchor="middle" font-size="12" fill="#52514e">560</text>
+<line x1="518.7" y1="56" x2="518.7" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="518.7" y="424" text-anchor="middle" font-size="12" fill="#52514e">580</text>
+<line x1="627.3" y1="56" x2="627.3" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="627.3" y="424" text-anchor="middle" font-size="12" fill="#52514e">600</text>
+<line x1="736" y1="56" x2="736" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="736" y="424" text-anchor="middle" font-size="12" fill="#52514e">620</text>
+<line x1="84" y1="406" x2="736" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="76" y="410" text-anchor="end" font-size="12" fill="#52514e">590</text>
+<line x1="84" y1="356" x2="736" y2="356" stroke="#e4e2dc" stroke-width="1"/>
+<text x="76" y="360" text-anchor="end" font-size="12" fill="#52514e">600</text>
+<line x1="84" y1="306" x2="736" y2="306" stroke="#e4e2dc" stroke-width="1"/>
+<text x="76" y="310" text-anchor="end" font-size="12" fill="#52514e">610</text>
+<line x1="84" y1="256" x2="736" y2="256" stroke="#e4e2dc" stroke-width="1"/>
+<text x="76" y="260" text-anchor="end" font-size="12" fill="#52514e">620</text>
+<line x1="84" y1="206" x2="736" y2="206" stroke="#e4e2dc" stroke-width="1"/>
+<text x="76" y="210" text-anchor="end" font-size="12" fill="#52514e">630</text>
+<line x1="84" y1="156" x2="736" y2="156" stroke="#e4e2dc" stroke-width="1"/>
+<text x="76" y="160" text-anchor="end" font-size="12" fill="#52514e">640</text>
+<line x1="84" y1="106" x2="736" y2="106" stroke="#e4e2dc" stroke-width="1"/>
+<text x="76" y="110" text-anchor="end" font-size="12" fill="#52514e">650</text>
+<line x1="84" y1="56" x2="736" y2="56" stroke="#e4e2dc" stroke-width="1"/>
+<text x="76" y="60" text-anchor="end" font-size="12" fill="#52514e">660</text>
+<g clip-path="url(#plot)">
+<circle cx="149" cy="235.9" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="1.5"/>
+<circle cx="180.2" cy="248.5" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="1.5"/>
+<circle cx="460" cy="291.4" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="1.5"/>
+<circle cx="654.9" cy="133.8" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="1.5"/>
+<text x="156" y="229.9" text-anchor="start" font-size="11" fill="#52514e">road+barge via Santarem</text>
+<text x="187.2" y="242.5" text-anchor="start" font-size="11" fill="#52514e">road via Santarem</text>
+<text x="467" y="285.4" text-anchor="start" font-size="11" fill="#52514e">road+rail via Santos</text>
+<text x="661.9" y="127.8" text-anchor="start" font-size="11" fill="#52514e">road via Santos</text>
+<path d="" fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray=""/>
+</g>
+<line x1="84" y1="406" x2="736" y2="406" stroke="#8d8b85" stroke-width="1"/>
+<line x1="84" y1="56" x2="84" y2="406" stroke="#8d8b85" stroke-width="1"/>
+<text x="410" y="446" text-anchor="middle" font-size="13" fill="#0b0b0b">mean cost (R$/t, generalized, with interruptions)</text>
+<text transform="translate(22 231) rotate(-90)" text-anchor="middle" font-size="13" fill="#0b0b0b">CVaR95: mean of the worst 5% (R$/t)</text>
+</svg>

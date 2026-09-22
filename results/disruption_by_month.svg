@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" width="760" height="540" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="760" height="540" fill="#fcfcfb"/>
+<text x="84" y="24" text-anchor="start" font-size="16" fill="#0b0b0b"><tspan font-weight="600">Tail cost of interruptions by month: wait it out vs re-plan</tspan></text>
+<text x="84" y="42" text-anchor="start" font-size="12" fill="#52514e">Expected-cost route from Sorriso; CVaR95 = mean cost of the worst 5% of 16,384 sampled trips.</text>
+<defs><clipPath id="plot"><rect x="84" y="56" width="652" height="350"/></clipPath></defs>
+<line x1="143.3" y1="56" x2="143.3" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="143.3" y="424" text-anchor="middle" font-size="12" fill="#52514e">2</text>
+<line x1="261.8" y1="56" x2="261.8" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="261.8" y="424" text-anchor="middle" font-size="12" fill="#52514e">4</text>
+<line x1="380.4" y1="56" x2="380.4" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="380.4" y="424" text-anchor="middle" font-size="12" fill="#52514e">6</text>
+<line x1="498.9" y1="56" x2="498.9" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="498.9" y="424" text-anchor="middle" font-size="12" fill="#52514e">8</text>
+<line x1="617.5" y1="56" x2="617.5" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="617.5" y="424" text-anchor="middle" font-size="12" fill="#52514e">10</text>
+<line x1="736" y1="56" x2="736" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="736" y="424" text-anchor="middle" font-size="12" fill="#52514e">12</text>
+<line x1="84" y1="406" x2="736" y2="406" stroke="#e4e2dc" stroke-width="1"/>
+<text x="76" y="410" text-anchor="end" font-size="12" fill="#52514e">500</text>
+<line x1="84" y1="318.5" x2="736" y2="318.5" stroke="#e4e2dc" stroke-width="1"/>
+<text x="76" y="322.5" text-anchor="end" font-size="12" fill="#52514e">550</text>
+<line x1="84" y1="231" x2="736" y2="231" stroke="#e4e2dc" stroke-width="1"/>
+<text x="76" y="235" text-anchor="end" font-size="12" fill="#52514e">600</text>
+<line x1="84" y1="143.5" x2="736" y2="143.5" stroke="#e4e2dc" stroke-width="1"/>
+<text x="76" y="147.5" text-anchor="end" font-size="12" fill="#52514e">650</text>
+<line x1="84" y1="56" x2="736" y2="56" stroke="#e4e2dc" stroke-width="1"/>
+<text x="76" y="60" text-anchor="end" font-size="12" fill="#52514e">700</text>
+<g clip-path="url(#plot)">
+<path d="M84 385.1 L143.3 322.5 L202.5 322.5 L261.8 330.9 L321.1 387.4 L380.4 393.9 L439.6 393.9 L498.9 393.9 L558.2 389.1 L617.5 389.1 L676.7 389.1 L736 385.1 " fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2 4"/>
+<path d="M84 189 L143.3 125.9 L202.5 125.9 L261.8 231.5 L321.1 287.7 L380.4 297.6 L439.6 297.6 L498.9 297.6 L558.2 272.6 L617.5 272.6 L676.7 272.6 L736 189 " fill="none" stroke="#e34948" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray=""/>
+<path d="M84 325.6 L143.3 249 L202.5 249 L261.8 281.4 L321.1 342.4 L380.4 352.2 L439.6 352.2 L498.9 352.2 L558.2 337 L617.5 337 L676.7 337 L736 325.6 " fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray=""/>
+<path d="M84 189 L143.3 125.9 L202.5 125.9 L261.8 231.5 L321.1 287.7 L380.4 297.6 L439.6 297.6 L498.9 297.6 L558.2 322.3 L617.5 322.3 L676.7 322.3 L736 189 " fill="none" stroke="#e34948" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
+<path d="M84 325.6 L143.3 249 L202.5 249 L261.8 281.4 L321.1 342.4 L380.4 352.2 L439.6 352.2 L498.9 352.2 L558.2 362.9 L617.5 362.9 L676.7 362.9 L736 325.6 " fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
+</g>
+<line x1="84" y1="406" x2="736" y2="406" stroke="#8d8b85" stroke-width="1"/>
+<line x1="84" y1="56" x2="84" y2="406" stroke="#8d8b85" stroke-width="1"/>
+<text x="410" y="446" text-anchor="middle" font-size="13" fill="#0b0b0b">month (1 = Jan)</text>
+<text transform="translate(22 231) rotate(-90)" text-anchor="middle" font-size="13" fill="#0b0b0b">R$/t (generalized)</text>
+<line x1="84" y1="472" x2="106" y2="472" stroke="#2a78d6" stroke-width="2" stroke-dasharray="2 4"/>
+<text x="114" y="476" text-anchor="start" font-size="12" fill="#0b0b0b">mean, fixed route</text>
+<line x1="248.2" y1="472" x2="270.2" y2="472" stroke="#e34948" stroke-width="2" stroke-dasharray=""/>
+<text x="278.2" y="476" text-anchor="start" font-size="12" fill="#0b0b0b">CVaR95, fixed route</text>
+<line x1="425.6" y1="472" x2="447.6" y2="472" stroke="#1baf7a" stroke-width="2" stroke-dasharray=""/>
+<text x="455.6" y="476" text-anchor="start" font-size="12" fill="#0b0b0b">CVaR95, adaptive re-planning</text>
+<line x1="84" y1="490" x2="106" y2="490" stroke="#e34948" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="114" y="494" text-anchor="start" font-size="12" fill="#0b0b0b">CVaR95 fixed, drought year</text>
+<line x1="307.6" y1="490" x2="329.6" y2="490" stroke="#1baf7a" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="337.6" y="494" text-anchor="start" font-size="12" fill="#0b0b0b">CVaR95 adaptive, drought year</text>
+</svg>

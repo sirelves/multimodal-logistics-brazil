@@ -1,0 +1,5 @@
+port,cost_brl_t,days,p_interrupt_pct,expected_brl_t,mean,p95,cvar95,max,route
+Santarem,450.5,45.68,9.25,511.5,512,540.9,624,1192.8,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+Santarem,460,43.28,7.41,517.3,517.7,535.8,621.5,1212.8,Sorriso > Santarem > Santarem (ship) > Shanghai
+Santos,510.5,46.93,5.39,569.1,569.2,568.1,612.9,1155,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+Santos,550,44.17,3.47,604.9,605.1,603,644.4,1246.2,Sorriso > Santos > Santos (ship) > Shanghai
