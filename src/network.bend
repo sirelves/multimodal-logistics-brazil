@@ -64,9 +64,15 @@ def ITQ() -> U32:
   26
 def ITQ_SHIP() -> U32:
   27
+# the Ferrovia Norte-Sul loading terminal eastern MT trucks use (Porto Nacional
+# / Aguiarnopolis, TO) and its rail side
+def PNC() -> U32:
+  28
+def PNC_RAIL() -> U32:
+  29
 
 def n_nodes() -> Nat:
-  28n
+  30n
 
 def node_name(+i: U32) -> String:
   +names : List<&2, String> = ["Sorriso", "Sinop", "Lucas do Rio Verde", "Rondonopolis", "Rondonopolis (rail)",
@@ -74,7 +80,7 @@ def node_name(+i: U32) -> String:
     "Porto Velho (barge)", "Santos", "Paranagua", "Santarem", "Barcarena", "Itacoatiara",
     "Santos (ship)", "Paranagua (ship)", "Santarem (ship)", "Barcarena (ship)", "Itacoatiara (ship)",
     "Shanghai", "Miritituba (rail)", "Mato Grosso", "Canarana", "Primavera do Leste",
-    "Itaqui", "Itaqui (ship)"]
+    "Itaqui", "Itaqui (ship)", "Porto Nacional", "Porto Nacional (rail)"]
   Maybe.default(&2, String, List.get(&2, String, names, U32.to_nat(i)), "?")
 
 # ---- infrastructure that may or may not exist ----
@@ -208,10 +214,16 @@ def legs() -> List<&2, Leg>:
    Leg{39, CAN(), RON(), R, 600.0, 0.0, 0.0, big(), rp(), EXISTING()},
    # Itaqui: elevation and ocean (USDA Sao Luis), capacity = observed peak
    Leg{40, ITQ(), ITQ_SHIP(), X, 0.0, P.elevation(), 48.0, 460.0, S.PORT_PEAK_NORTH(), EXISTING()},
-   Leg{41, ITQ_SHIP(), CHN(), H, 22000.0, P.ocean_itaqui(), 0.0, big(), 0, EXISTING()}]
+   Leg{41, ITQ_SHIP(), CHN(), H, 22000.0, P.ocean_itaqui(), 0.0, big(), 0, EXISTING()},
+   # Ferrovia Norte-Sul: truck from eastern MT to the Porto Nacional terminal,
+   # then rail to Itaqui (distances approximate; no published intermodal tariff
+   # was found, so the rail rate is the same as Rumo's)
+   Leg{42, CAN(), PNC(), R, 700.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   Leg{43, PNC(), PNC_RAIL(), X, 0.0, 0.0, 24.0, 1000.0, 0, EXISTING()},
+   Leg{44, PNC_RAIL(), ITQ(), T, 1430.0, 0.0, 0.0, 1000.0, 0, EXISTING()}]
 
 def n_legs() -> Nat:
-  42n
+  45n
 
 # Supply of each origin region for this month, kt: North MT (Sorriso),
 # Northeast MT (Canarana), Southeast MT (Primavera do Leste).

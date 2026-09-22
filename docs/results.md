@@ -72,11 +72,20 @@ and then applied unchanged to 2025.
   state's production geography; how the 40% divides between Northeast and
   Southeast does not matter here, because the model gives both the same options.
   The split is fitted, not sourced — IMEA regional production would test it. **MODEL.**
-- **~7 pp of error survives**, and part of it is identifiable: the model never uses
-  **Itaqui** (5–7% of MT grain in reality), because it can only reach it by 1,894 km
-  of truck, while real cargo goes by the Ferrovia Norte-Sul, which is not in the
-  network. The rest is month-to-month timing (storage between months) and
-  contracts. **MODEL.**
+- **~7 pp of error survives.** The largest identifiable piece is **Itaqui**: 5–7%
+  of MT grain leaves through it, the model sends none. Adding the Ferrovia
+  Norte-Sul corridor (truck to Porto Nacional, then rail) **changed nothing** — the
+  route is simply dearer than Santos for eastern MT:
+
+  | from Northeast MT (Canarana), June, R$/t door to door | Santos | Itaqui (FNS) | Paranaguá |
+  |---|---|---|---|
+  | generalized cost | **677** | 728 | 734 |
+
+  At Rumo-like tariffs the FNS would have to be **22% cheaper per t·km** to break
+  even. So the observed Itaqui flow is not cost-driven in this model: it comes from
+  contracts, Santos congestion the model does not represent, or a rail tariff below
+  the one assumed. Full table in `results/corridor_costs.csv`. **MODEL**; the
+  reading is **SPECULATIVE**, since no FNS tariff was found.
 
 This is the main methodological result: a cost-minimizing allocation with one
 origin — the shape most corridor studies use — misprices market share by about
@@ -169,10 +178,10 @@ split of a terminal's capacity between MT and other states.
 
 ## 8. What would change the conclusions
 
-- **Itaqui via the Ferrovia Norte-Sul**, the one corridor with material volume
-  that the network cannot represent; adding it should absorb a chunk of the
-  remaining 7 pp.
-- **Sourced regional production weights** (IMEA) in place of the fitted 60/40
+- **A published FNS/VLI tariff**: the corridor is in the network now, but at an
+  assumed rate that makes Itaqui uneconomic. This is the one number that would
+  settle whether the missing 5–7% is price or contracts.
+- **Sourced regional production weights** (IBGE/IMEA) in place of the fitted 60/40
   origin split.
 - Take-or-pay rail and terminal-ownership constraints.
 - Storage between months: the model must ship each month what that month produced.

@@ -154,6 +154,34 @@ def fit_rows(+fs: List<&2, Fit>) -> List<&2, String>:
     case f <> rest:
       fit_row(f) <> fit_rows(rest)
 
+# ---- why a corridor is or is not used: door-to-door cost by origin and port ----
+
+def ship_node(+i: U32) -> U32:
+  Bool.pick(U32, U32.is_eq(i, 5), N.ITQ_SHIP(), (16 + i : U32))
+
+def ocean_leg(+i: U32) -> U32:
+  Bool.pick(U32, U32.is_eq(i, 5), 41, (24 + i : U32))
+
+def port_name(+i: U32) -> String:
+  N.node_name(Bool.pick(U32, U32.is_eq(i, 5), N.ITQ(), (11 + i : U32)))
+
+# generalized cost from an origin to Shanghai through port i, R$/t
+def door_to_door(+month: U32, +origin: U32, +i: U32) -> F32:
+  +as = N.arcs(month, N.base())
+  +inland = SP.Route.g(SP.route(N.n_nodes(), as, gen(), origin, ship_node(i)))
+  +sea = Maybe.default(&2, G.Arc, G.arc_at(as, ocean_leg(i)), G.Arc{0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0})
+  (inland + SP.gcost(gen(), sea) : F32)
+
+def corridor_row(+month: U32, +origin: U32, +name: String, +i: U32) -> String:
+  R.csv([name, port_name(i), R.fmt(door_to_door(month, origin, i), 1n)])
+
+def corridor_rows(+n: Nat, +month: U32, +origin: U32, +name: String) -> List<&2, String>:
+  match n:
+    case 0n:
+      []
+    case 1n+k:
+      corridor_row(month, origin, name, U32.from_nat(k)) <> corridor_rows(k, month, origin, name)
+
 # ---- per-month table ----
 
 def cells(+year: U32, +month: U32, +i: U32) -> List<&2, String>:
@@ -223,6 +251,11 @@ def main() -> IO(Unit):
     IOF.write_file("results/validation_friction.csv",
       R.csv(["w_north_mt", "w_northeast_mt", "w_southeast_mt", "friction_brl_t", "mae_2024_pp", "mae_2025_pp"])
         ++ R.lines(fit_rows(fgrid)))
+    IOF.write_file("results/corridor_costs.csv",
+      R.csv(["origin", "port", "door_to_door_brl_t"])
+        ++ R.lines(corridor_rows(6n, 5, N.SOR(), "North MT (Sorriso)"))
+        ++ R.lines(corridor_rows(6n, 5, N.CAN(), "Northeast MT (Canarana)"))
+        ++ R.lines(corridor_rows(6n, 5, N.PRI(), "Southeast MT (Primavera)")))
     IOF.write_file("results/validation.csv",
       R.csv(["year", "month", "mt_volume_kt", "shipped_kt",
         "santos_obs_kt", "santos_model_kt", "santos_obs_pct", "santos_model_pct",

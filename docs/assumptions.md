@@ -34,9 +34,10 @@ model is not the world — and `results.md` §2 measures exactly how far off it 
 6. **The friction parameter** (R$/t added to the northern truck hauls) is kept in
    the code and swept in `validation_friction.csv`, but the fitted model does not
    use it: with three origins its best value is zero.
-6b. **Itaqui is reachable only by truck** in the network (1,894 km from Canarana),
-   so the model never uses it, while 5–7% of MT grain does. The missing piece is
-   the Ferrovia Norte-Sul.
+6b. **The Ferrovia Norte-Sul corridor to Itaqui** (truck 700 km to Porto Nacional,
+   rail 1,430 km) uses approximate distances and Rumo's rail rate, because no
+   published FNS tariff was found. At that rate the model never uses Itaqui,
+   while 5–7% of MT grain does.
 7. **Two railways as what-ifs.** Ferrogrão (planned) and the Rumo extension to
    Lucas do Rio Verde (under construction, 2031) use the same rail rate, speed and
    risk as the existing Rumo line. Their real tariffs are unknown; the Ferrogrão
