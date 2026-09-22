@@ -12,6 +12,7 @@ test:
 	$(BEND) tests/tests.bend
 
 figures:
+	$(BEND) simulations/validation.bend
 	$(BEND) simulations/fronts.bend
 	$(BEND) simulations/seasonal.bend
 	$(BEND) simulations/capacity.bend

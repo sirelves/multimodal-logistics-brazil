@@ -79,36 +79,44 @@ def RUMO_EXT() -> U32:
 type Leg is Data:
   Leg{id: U32, src: U32, dst: U32, mode: U32, km: F32, fc: F32, fh: F32, cap: F32, fx: U32, infra: U32}
 
-# portx scales the capacity of the five export terminals (legs 19..23)
+# portx scales the capacity of the five export terminals (legs 19..23);
+# friction is an extra R$/t on every leg that enters a northern corridor
+# (legs 3, 4, 7: the BR-163 and BR-364 truck hauls), a stand-in for whatever
+# keeps cargo out of the Arco Norte beyond corridor cost -- contracts, terminal
+# ownership, origins further south. Fitted in simulations/validation.bend.
 type Scenario is Data:
-  Scenario{ferrograo: Bool, rumo_ext: Bool, drought: Bool, blocked: List<&2, U32>, portx: F32}
+  Scenario{ferrograo: Bool, rumo_ext: Bool, drought: Bool, blocked: List<&2, U32>, portx: F32, friction: F32}
 
 def base() -> Scenario:
-  Scenario{False{}, False{}, False{}, [], 1.0}
+  Scenario{False{}, False{}, False{}, [], 1.0, 0.0}
 
 def drought() -> Scenario:
-  Scenario{False{}, False{}, True{}, [], 1.0}
+  Scenario{False{}, False{}, True{}, [], 1.0, 0.0}
 
 def ferrograo() -> Scenario:
-  Scenario{True{}, False{}, False{}, [], 1.0}
+  Scenario{True{}, False{}, False{}, [], 1.0, 0.0}
 
 def rumo() -> Scenario:
-  Scenario{False{}, True{}, False{}, [], 1.0}
+  Scenario{False{}, True{}, False{}, [], 1.0, 0.0}
 
 def rails() -> Scenario:
-  Scenario{True{}, True{}, False{}, [], 1.0}
+  Scenario{True{}, True{}, False{}, [], 1.0, 0.0}
 
 def with_drought(+sc: Scenario) -> Scenario:
-  Scenario{f, r, d, b, x} = sc
-  Scenario{f, r, True{}, b, x}
+  Scenario{f, r, d, b, x, fr} = sc
+  Scenario{f, r, True{}, b, x, fr}
 
 def with_ports(+sc: Scenario, +k: F32) -> Scenario:
-  Scenario{f, r, d, b, x} = sc
-  Scenario{f, r, d, b, (x * k : F32)}
+  Scenario{f, r, d, b, x, fr} = sc
+  Scenario{f, r, d, b, (x * k : F32), fr}
 
 def with_blocked(+sc: Scenario, +ids: List<&2, U32>) -> Scenario:
-  Scenario{f, r, d, b, x} = sc
-  Scenario{f, r, d, List.append(&2, U32, ids, b), x}
+  Scenario{f, r, d, b, x, fr} = sc
+  Scenario{f, r, d, List.append(&2, U32, ids, b), x, fr}
+
+def with_friction(+sc: Scenario, +k: F32) -> Scenario:
+  Scenario{f, r, d, b, x, fr} = sc
+  Scenario{f, r, d, b, x, k}
 
 # BR-163 north of Sorriso (truck legs to Miritituba and Santarem) blocked
 def br163_blocked() -> Scenario:
@@ -117,8 +125,12 @@ def br163_blocked() -> Scenario:
 def big() -> F32:
   99999.0
 
+# every road leg carries the monthly price factor; the northern ones also the rains
+def rp() -> U32:
+  S.ROAD_PRICE()
+
 def rd() -> U32:
-  (S.RAINY_ROAD() .|. S.HARVEST_FREIGHT() : U32)
+  (S.RAINY_ROAD() .|. S.ROAD_PRICE() : U32)
 
 def legs() -> List<&2, Leg>:
   +R = P.ROAD()
@@ -126,63 +138,74 @@ def legs() -> List<&2, Leg>:
   +B = P.BARGE()
   +H = P.SHIP()
   +X = P.XFER()
-  # road from the farm cluster
-  [Leg{0, SOR(), SIN(), R, 80.0, 0.0, 0.0, big(), 0, EXISTING()},
-   Leg{1, SOR(), LRV(), R, 60.0, 0.0, 0.0, big(), 0, EXISTING()},
-   Leg{2, SOR(), RON(), R, 610.0, 0.0, 0.0, big(), S.HARVEST_FREIGHT(), EXISTING()},
-   Leg{3, SOR(), MIR(), R, 1070.0, 0.0, 0.0, big(), rd(), EXISTING()},
-   Leg{4, SOR(), PVH(), R, 1350.0, 0.0, 0.0, big(), rd(), EXISTING()},
-   Leg{5, SOR(), SSZ(), R, 2000.0, 0.0, 0.0, big(), S.HARVEST_FREIGHT(), EXISTING()},
-   Leg{6, SOR(), PNG(), R, 2150.0, 0.0, 0.0, big(), S.HARVEST_FREIGHT(), EXISTING()},
-   Leg{7, SOR(), STM(), R, 1400.0, 0.0, 0.0, big(), rd(), EXISTING()},
-   # truck -> other mode at the inland terminals
-   Leg{8, RON(), RON_RAIL(), X, 0.0, 20.0, 24.0, big(), 0, EXISTING()},
-   Leg{9, LRV(), LRV_RAIL(), X, 0.0, 20.0, 24.0, big(), 0, RUMO_EXT()},
-   Leg{10, SIN(), SIN_RAIL(), X, 0.0, 20.0, 24.0, big(), 0, FERROGRAO()},
-   Leg{11, MIR(), MIR_BARGE(), X, 0.0, 25.0, 36.0, 1500.0, 0, EXISTING()},
-   Leg{12, PVH(), PVH_BARGE(), X, 0.0, 25.0, 36.0, 420.0, 0, EXISTING()},
+  # road from the farm cluster (distances: USDA AgTransport legs; Sinop and
+  # Lucas are short hops off the BR-163)
+  [Leg{0, SOR(), SIN(), R, 80.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   Leg{1, SOR(), LRV(), R, 60.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   Leg{2, SOR(), RON(), R, 615.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   Leg{3, SOR(), MIR(), R, 1081.0, 0.0, 0.0, big(), rd(), EXISTING()},
+   Leg{4, SOR(), PVH(), R, 1017.0, 0.0, 0.0, big(), rd(), EXISTING()},
+   Leg{5, SOR(), SSZ(), R, 1915.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   Leg{6, SOR(), PNG(), R, 2031.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   Leg{7, SOR(), STM(), R, 1410.0, 0.0, 0.0, big(), rd(), EXISTING()},
+   # truck -> other mode at the inland terminals: the transshipment is already
+   # inside the rail and barge quotes, so only time and capacity are charged
+   Leg{8, RON(), RON_RAIL(), X, 0.0, 0.0, 24.0, 2000.0, 0, EXISTING()},
+   Leg{9, LRV(), LRV_RAIL(), X, 0.0, 0.0, 24.0, 830.0, 0, RUMO_EXT()},
+   Leg{10, SIN(), SIN_RAIL(), X, 0.0, 0.0, 24.0, 2000.0, 0, FERROGRAO()},
+   Leg{11, MIR(), MIR_BARGE(), X, 0.0, 0.0, 36.0, 3040.0, 0, EXISTING()},
+   Leg{12, PVH(), PVH_BARGE(), X, 0.0, 0.0, 36.0, 790.0, 0, EXISTING()},
    # rail
-   Leg{13, RON_RAIL(), SSZ(), T, 1655.0, 0.0, 0.0, 2000.0, 0, EXISTING()},
+   Leg{13, RON_RAIL(), SSZ(), T, 1640.0, 0.0, 0.0, 2000.0, 0, EXISTING()},
    Leg{14, LRV_RAIL(), RON_RAIL(), T, 750.0, 0.0, 0.0, 830.0, 0, RUMO_EXT()},
    Leg{15, SIN_RAIL(), MIR_RAIL(), T, 933.0, 0.0, 0.0, 2000.0, 0, FERROGRAO()},
    # barge
-   Leg{16, MIR_BARGE(), STM(), B, 300.0, 0.0, 0.0, 600.0, S.TAPAJOS_LOW(), EXISTING()},
-   Leg{17, MIR_BARGE(), BAR(), B, 1000.0, 0.0, 0.0, 1170.0, S.TAPAJOS_LOW(), EXISTING()},
-   Leg{18, PVH_BARGE(), ITA(), B, 1060.0, 0.0, 0.0, 420.0, S.MADEIRA_LOW(), EXISTING()},
-   # export terminals: handling + base line-up, peak line-ups are seasonal
-   Leg{19, SSZ(), SSZ_SHIP(), X, 0.0, 30.0, 72.0, 1800.0, S.PORT_PEAK_SOUTH(), EXISTING()},
-   Leg{20, PNG(), PNG_SHIP(), X, 0.0, 30.0, 72.0, 1000.0, S.PORT_PEAK_SOUTH(), EXISTING()},
-   Leg{21, STM(), STM_SHIP(), X, 0.0, 30.0, 48.0, 500.0, S.PORT_PEAK_NORTH(), EXISTING()},
-   Leg{22, BAR(), BAR_SHIP(), X, 0.0, 30.0, 48.0, 1170.0, S.PORT_PEAK_NORTH(), EXISTING()},
-   Leg{23, ITA(), ITA_SHIP(), X, 0.0, 30.0, 48.0, 420.0, S.PORT_PEAK_NORTH(), EXISTING()},
-   # ocean: same length, time and price from every port (no source for a
-   # differential, so it is set neutral and does not drive the choice)
-   Leg{24, SSZ_SHIP(), CHN(), H, 22000.0, 0.0, 0.0, big(), 0, EXISTING()},
-   Leg{25, PNG_SHIP(), CHN(), H, 22000.0, 0.0, 0.0, big(), 0, EXISTING()},
-   Leg{26, STM_SHIP(), CHN(), H, 22000.0, 0.0, 0.0, big(), 0, EXISTING()},
-   Leg{27, BAR_SHIP(), CHN(), H, 22000.0, 0.0, 0.0, big(), 0, EXISTING()},
-   Leg{28, ITA_SHIP(), CHN(), H, 22000.0, 0.0, 0.0, big(), 0, EXISTING()},
+   Leg{16, MIR_BARGE(), STM(), B, 246.0, 0.0, 0.0, 890.0, S.TAPAJOS_LOW(), EXISTING()},
+   Leg{17, MIR_BARGE(), BAR(), B, 966.0, 0.0, 0.0, 2150.0, S.TAPAJOS_LOW(), EXISTING()},
+   Leg{18, PVH_BARGE(), ITA(), B, 1060.0, 0.0, 0.0, 790.0, S.MADEIRA_LOW(), EXISTING()},
+   # export terminals: elevation onto the ship, base line-up, peak line-ups are
+   # seasonal; capacity = the highest month of MT grain ever shipped through the
+   # port (Comex Stat 2023-2026), i.e. a revealed lower bound
+   Leg{19, SSZ(), SSZ_SHIP(), X, 0.0, P.elevation(), 72.0, 2700.0, S.PORT_PEAK_SOUTH(), EXISTING()},
+   Leg{20, PNG(), PNG_SHIP(), X, 0.0, P.elevation(), 72.0, 270.0, S.PORT_PEAK_SOUTH(), EXISTING()},
+   Leg{21, STM(), STM_SHIP(), X, 0.0, P.elevation(), 48.0, 890.0, S.PORT_PEAK_NORTH(), EXISTING()},
+   Leg{22, BAR(), BAR_SHIP(), X, 0.0, P.elevation(), 48.0, 2150.0, S.PORT_PEAK_NORTH(), EXISTING()},
+   Leg{23, ITA(), ITA_SHIP(), X, 0.0, P.elevation(), 48.0, 790.0, S.PORT_PEAK_NORTH(), EXISTING()},
+   # ocean to Shanghai: a per-port price (USDA), same 38-day voyage
+   Leg{24, SSZ_SHIP(), CHN(), H, 22000.0, P.ocean_santos(), 0.0, big(), 0, EXISTING()},
+   Leg{25, PNG_SHIP(), CHN(), H, 22000.0, P.ocean_paranagua(), 0.0, big(), 0, EXISTING()},
+   Leg{26, STM_SHIP(), CHN(), H, 22000.0, P.ocean_santarem(), 0.0, big(), 0, EXISTING()},
+   Leg{27, BAR_SHIP(), CHN(), H, 22000.0, P.ocean_barcarena(), 0.0, big(), 0, EXISTING()},
+   Leg{28, ITA_SHIP(), CHN(), H, 22000.0, P.ocean_itacoatiara(), 0.0, big(), 0, EXISTING()},
    # rail -> barge at Miritituba (Ferrograo terminus)
-   Leg{29, MIR_RAIL(), MIR_BARGE(), X, 0.0, 15.0, 12.0, 2000.0, 0, FERROGRAO()}]
+   Leg{29, MIR_RAIL(), MIR_BARGE(), X, 0.0, 0.0, 12.0, 2000.0, 0, FERROGRAO()}]
 
 def n_legs() -> Nat:
   30n
 
 def built(+sc: Scenario, +infra: U32) -> Bool:
-  Scenario{f, r, d, b, x} = sc
+  Scenario{f, r, d, b, x, fr} = sc
   Bool.or(U32.is_eq(infra, EXISTING()),
     Bool.or(Bool.and(f, U32.is_eq(infra, FERROGRAO())), Bool.and(r, U32.is_eq(infra, RUMO_EXT()))))
 
 def is_blocked(+sc: Scenario, +id: U32) -> Bool:
-  Scenario{f, r, d, b, x} = sc
+  Scenario{f, r, d, b, x, fr} = sc
   G.mem(b, id)
 
 def risk_of(+p: F32) -> F32:
   (0.0 - F32.log((1.0 - F32.min(p, 0.95) : F32)) : F32)
 
 def Scenario.portx(+sc: Scenario) -> F32:
-  Scenario{f, r, d, b, x} = sc
+  Scenario{f, r, d, b, x, fr} = sc
   x
+
+def Scenario.friction(+sc: Scenario) -> F32:
+  Scenario{f, r, d, b, x, fr} = sc
+  fr
+
+# the truck hauls that enter a northern corridor
+def is_north(+id: U32) -> Bool:
+  Bool.or(U32.is_eq(id, 3), Bool.or(U32.is_eq(id, 4), U32.is_eq(id, 7)))
 
 def is_port(+id: U32) -> Bool:
   Bool.and(U32.is_ge(id, 19), U32.is_le(id, 23))
@@ -191,7 +214,8 @@ def to_arc(+sc: Scenario, +l: Leg, +f: S.SF) -> G.Arc:
   Leg{id, s, d, m, km, fc, fh, cap0, fx, inf} = l
   S.SF{cmul, tadd, capmul, pmul, open} = f
   +cap = (cap0 * Bool.pick(F32, is_port(id), Scenario.portx(sc), 1.0) : F32)
-  +cost = ((fc + km * P.rate(m)) * cmul : F32)
+  +cost = ((P.fixed(m) + fc + km * P.rate(m)) * cmul
+    + Bool.pick(F32, is_north(id), Scenario.friction(sc), 0.0) : F32)
   +hours = (fh + km / P.speed(m) + tadd : F32)
   G.Arc{id, s, d, m, cost, hours, risk_of((P.p_base(m) * pmul : F32)), (cap * capmul : F32)}
 
@@ -206,7 +230,7 @@ def Leg.fx(+l: Leg) -> U32:
   fx
 
 def Scenario.drought(+sc: Scenario) -> Bool:
-  Scenario{f, r, d, b, x} = sc
+  Scenario{f, r, d, b, x, fr} = sc
   d
 
 def eval_legs(+ls: List<&2, Leg>, +month: U32, +sc: Scenario) -> List<&2, G.Arc>:

@@ -1,207 +1,205 @@
 scenario,month,cost_brl_t,days,p_interrupt_pct,port,route
-base,Jan,450.5,45.68,9.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-base,Jan,460,43.28,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-base,Jan,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-base,Jan,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-base,Feb,482.6,48.68,10.16,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-base,Feb,502,46.28,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-base,Feb,528.8,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-base,Feb,610,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-base,Mar,482.6,48.68,10.16,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-base,Mar,502,46.28,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-base,Mar,528.8,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-base,Mar,610,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-base,Apr,482.6,47.68,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-base,Apr,502,45.28,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-base,May,450.5,47.68,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-base,May,460,45.28,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-base,Jun,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-base,Jun,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-base,Jul,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-base,Jul,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-base,Aug,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-base,Aug,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-base,Sep,452,45.18,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-base,Sep,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-base,Oct,452,45.18,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-base,Oct,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-base,Nov,452,45.18,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-base,Nov,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-base,Dec,450.5,45.68,9.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-base,Dec,460,43.28,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-base,Dec,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-base,Dec,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-drought,Jan,450.5,45.68,9.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought,Jan,460,43.28,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought,Jan,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-drought,Jan,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-drought,Feb,482.6,48.68,10.16,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought,Feb,502,46.28,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought,Feb,528.8,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-drought,Feb,610,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-drought,Mar,482.6,48.68,10.16,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought,Mar,502,46.28,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought,Mar,528.8,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-drought,Mar,610,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-drought,Apr,482.6,47.68,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought,Apr,502,45.28,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought,May,450.5,47.68,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought,May,460,45.28,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought,Jun,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought,Jun,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought,Jul,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought,Jul,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought,Aug,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought,Aug,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought,Sep,455,46.68,8.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought,Sep,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought,Oct,455,46.68,8.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought,Oct,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought,Nov,455,46.68,8.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought,Nov,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought,Dec,450.5,45.68,9.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought,Dec,460,43.28,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought,Dec,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-drought,Dec,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-ferrograo,Jan,396,45.36,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Jan,460,43.28,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-ferrograo,Jan,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-ferrograo,Jan,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-ferrograo,Feb,396,48.36,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Feb,502,46.28,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-ferrograo,Feb,528.8,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-ferrograo,Feb,610,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-ferrograo,Mar,396,48.36,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Mar,502,46.28,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-ferrograo,Mar,528.8,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-ferrograo,Mar,610,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-ferrograo,Apr,396,48.36,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Apr,482.6,47.68,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Apr,502,45.28,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-ferrograo,May,396,48.36,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,May,450.5,47.68,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,May,460,45.28,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-ferrograo,Jun,396,45.36,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Jun,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Jun,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-ferrograo,Jul,396,45.36,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Jul,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Jul,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-ferrograo,Aug,396,45.36,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Aug,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Aug,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-ferrograo,Sep,397.5,45.86,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Sep,452,45.18,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Sep,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-ferrograo,Oct,397.5,45.86,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Oct,452,45.18,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Oct,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-ferrograo,Nov,397.5,45.86,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Nov,452,45.18,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Nov,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-ferrograo,Dec,396,45.36,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-ferrograo,Dec,460,43.28,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-ferrograo,Dec,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-ferrograo,Dec,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-rumo_ext,Jan,450.5,45.68,9.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Jan,460,43.28,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Jan,495.5,47.85,6.33,Santos,Sorriso > Lucas do Rio Verde > Lucas (rail) > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-rumo_ext,Jan,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-rumo_ext,Jan,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-rumo_ext,Feb,482.6,48.68,10.16,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Feb,495.5,52.85,7.28,Santos,Sorriso > Lucas do Rio Verde > Lucas (rail) > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-rumo_ext,Feb,502,46.28,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Feb,528.8,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-rumo_ext,Feb,610,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-rumo_ext,Mar,482.6,48.68,10.16,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Mar,495.5,52.85,7.28,Santos,Sorriso > Lucas do Rio Verde > Lucas (rail) > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-rumo_ext,Mar,502,46.28,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Mar,528.8,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-rumo_ext,Mar,610,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-rumo_ext,Apr,482.6,47.68,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Apr,502,45.28,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-rumo_ext,May,450.5,47.68,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-rumo_ext,May,460,45.28,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Jun,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Jun,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Jul,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Jul,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Aug,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Aug,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Sep,452,45.18,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Sep,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Oct,452,45.18,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Oct,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Nov,452,45.18,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Nov,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Dec,450.5,45.68,9.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Dec,460,43.28,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-rumo_ext,Dec,495.5,47.85,6.33,Santos,Sorriso > Lucas do Rio Verde > Lucas (rail) > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-rumo_ext,Dec,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-rumo_ext,Dec,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-br163_blocked,Jan,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-br163_blocked,Jan,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-br163_blocked,Feb,528.8,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-br163_blocked,Feb,610,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-br163_blocked,Mar,528.8,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-br163_blocked,Mar,610,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-br163_blocked,Apr,528.8,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-br163_blocked,Apr,571,51.61,6.34,Itacoatiara,Sorriso > Porto Velho > Porto Velho (barge) > Itacoatiara > Itacoatiara (ship) > Shanghai
-br163_blocked,Apr,610,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-br163_blocked,May,510.5,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-br163_blocked,May,530.5,51.61,6.34,Itacoatiara,Sorriso > Porto Velho > Porto Velho (barge) > Itacoatiara > Itacoatiara (ship) > Shanghai
-br163_blocked,May,550,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-br163_blocked,Jun,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-br163_blocked,Jun,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-br163_blocked,Jul,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-br163_blocked,Jul,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-br163_blocked,Aug,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-br163_blocked,Aug,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-br163_blocked,Sep,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-br163_blocked,Sep,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-br163_blocked,Oct,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-br163_blocked,Oct,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-br163_blocked,Nov,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-br163_blocked,Nov,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-br163_blocked,Dec,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-br163_blocked,Dec,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-drought_ferrograo,Jan,396,45.36,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Jan,460,43.28,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Jan,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-drought_ferrograo,Jan,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-drought_ferrograo,Feb,396,48.36,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Feb,502,46.28,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Feb,528.8,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-drought_ferrograo,Feb,610,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-drought_ferrograo,Mar,396,48.36,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Mar,502,46.28,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Mar,528.8,51.93,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-drought_ferrograo,Mar,610,49.17,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
-drought_ferrograo,Apr,396,48.36,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Apr,482.6,47.68,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Apr,502,45.28,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,May,396,48.36,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,May,450.5,47.68,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,May,460,45.28,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Jun,396,45.36,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Jun,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Jun,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Jul,396,45.36,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Jul,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Jul,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Aug,396,45.36,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Aug,450.5,44.68,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Aug,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Sep,400.5,47.36,10.08,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Sep,455,46.68,8.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Sep,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Oct,400.5,47.36,10.08,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Oct,455,46.68,8.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Oct,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Nov,400.5,47.36,10.08,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Nov,455,46.68,8.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Nov,460,42.28,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Dec,396,45.36,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Dec,460,43.28,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
-drought_ferrograo,Dec,510.5,46.93,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
-drought_ferrograo,Dec,550,44.17,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+base,Jan,555.2,45.44,9.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+base,Jan,581.1,43.29,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+base,Jan,652.7,46.91,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+base,Jan,674,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+base,Feb,588.7,48.44,10.16,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+base,Feb,624.5,46.29,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+base,Feb,672.2,51.91,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+base,Feb,732.5,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+base,Mar,600.2,48.44,10.16,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+base,Mar,639.4,46.29,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+base,Mar,678.9,51.91,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+base,Mar,752.7,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+base,Apr,588.9,47.44,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+base,Apr,624.8,45.29,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+base,May,576.6,47.44,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+base,May,608.9,45.29,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+base,Jun,580,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+base,Jun,613.2,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+base,Jul,582.8,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+base,Jul,616.9,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+base,Aug,573.8,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+base,Aug,605.3,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+base,Sep,570.4,44.94,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+base,Sep,595,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+base,Oct,553,44.94,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+base,Oct,572.5,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+base,Nov,544.1,44.94,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+base,Nov,560.9,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+base,Dec,533.9,45.44,9.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+base,Dec,553.6,43.29,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+base,Dec,636.9,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+drought,Jan,555.2,45.44,9.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought,Jan,581.1,43.29,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought,Jan,652.7,46.91,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+drought,Jan,674,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+drought,Feb,588.7,48.44,10.16,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought,Feb,624.5,46.29,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought,Feb,672.2,51.91,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+drought,Feb,732.5,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+drought,Mar,600.2,48.44,10.16,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought,Mar,639.4,46.29,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought,Mar,678.9,51.91,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+drought,Mar,752.7,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+drought,Apr,588.9,47.44,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought,Apr,624.8,45.29,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought,May,576.6,47.44,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought,May,608.9,45.29,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought,Jun,580,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought,Jun,613.2,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought,Jul,582.8,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought,Jul,616.9,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought,Aug,573.8,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought,Aug,605.3,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought,Sep,579.5,46.44,8.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought,Sep,595,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought,Oct,562.1,46.44,8.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought,Oct,572.5,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought,Nov,553.1,46.44,8.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought,Nov,560.9,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought,Dec,533.9,45.44,9.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought,Dec,553.6,43.29,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought,Dec,636.9,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+ferrograo,Jan,486.5,45.11,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Jan,581.1,43.29,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+ferrograo,Jan,652.7,46.91,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+ferrograo,Jan,674,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+ferrograo,Feb,489.9,48.11,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Feb,624.5,46.29,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+ferrograo,Feb,672.2,51.91,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+ferrograo,Feb,732.5,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+ferrograo,Mar,491.1,48.11,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Mar,639.4,46.29,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+ferrograo,Mar,678.9,51.91,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+ferrograo,Mar,752.7,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+ferrograo,Apr,489.9,48.11,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Apr,588.9,47.44,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Apr,624.8,45.29,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+ferrograo,May,488.7,48.11,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,May,576.6,47.44,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,May,608.9,45.29,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+ferrograo,Jun,489,45.11,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Jun,580,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Jun,613.2,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+ferrograo,Jul,489.3,45.11,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Jul,582.8,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Jul,616.9,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+ferrograo,Aug,488.4,45.11,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Aug,573.8,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Aug,605.3,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+ferrograo,Sep,492.1,45.61,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Sep,570.4,44.94,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Sep,595,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+ferrograo,Oct,490.3,45.61,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Oct,553,44.94,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Oct,572.5,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+ferrograo,Nov,489.4,45.61,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Nov,544.1,44.94,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Nov,560.9,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+ferrograo,Dec,484.3,45.11,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+ferrograo,Dec,553.6,43.29,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+ferrograo,Dec,636.9,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+rumo_ext,Jan,555.2,45.44,9.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Jan,581.1,43.29,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Jan,651.5,47.82,6.33,Santos,Sorriso > Lucas do Rio Verde > Lucas (rail) > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+rumo_ext,Jan,652.7,46.91,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+rumo_ext,Jan,674,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+rumo_ext,Feb,588.7,48.44,10.16,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Feb,624.5,46.29,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Feb,654.4,52.82,7.28,Santos,Sorriso > Lucas do Rio Verde > Lucas (rail) > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+rumo_ext,Feb,672.2,51.91,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+rumo_ext,Feb,732.5,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+rumo_ext,Mar,600.2,48.44,10.16,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Mar,639.4,46.29,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Mar,655.3,52.82,7.28,Santos,Sorriso > Lucas do Rio Verde > Lucas (rail) > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+rumo_ext,Mar,678.9,51.91,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+rumo_ext,Mar,752.7,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+rumo_ext,Apr,588.9,47.44,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Apr,624.8,45.29,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+rumo_ext,May,576.6,47.44,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+rumo_ext,May,608.9,45.29,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Jun,580,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Jun,613.2,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Jul,582.8,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Jul,616.9,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Aug,573.8,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Aug,605.3,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Sep,570.4,44.94,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Sep,595,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Oct,553,44.94,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Oct,572.5,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Nov,544.1,44.94,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Nov,560.9,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Dec,533.9,45.44,9.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Dec,553.6,43.29,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+rumo_ext,Dec,636.9,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+br163_blocked,Jan,626.5,49.12,9.25,Itacoatiara,Sorriso > Porto Velho > Porto Velho (barge) > Itacoatiara > Itacoatiara (ship) > Shanghai
+br163_blocked,Jan,652.7,46.91,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+br163_blocked,Jan,674,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+br163_blocked,Feb,658,52.12,10.16,Itacoatiara,Sorriso > Porto Velho > Porto Velho (barge) > Itacoatiara > Itacoatiara (ship) > Shanghai
+br163_blocked,Feb,672.2,51.91,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+br163_blocked,Feb,732.5,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+br163_blocked,Mar,668.9,52.12,10.16,Itacoatiara,Sorriso > Porto Velho > Porto Velho (barge) > Itacoatiara > Itacoatiara (ship) > Shanghai
+br163_blocked,Mar,678.9,51.91,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+br163_blocked,Mar,752.7,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+br163_blocked,Apr,658.3,51.12,6.34,Itacoatiara,Sorriso > Porto Velho > Porto Velho (barge) > Itacoatiara > Itacoatiara (ship) > Shanghai
+br163_blocked,Apr,733,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+br163_blocked,May,646.7,51.12,6.34,Itacoatiara,Sorriso > Porto Velho > Porto Velho (barge) > Itacoatiara > Itacoatiara (ship) > Shanghai
+br163_blocked,May,711.5,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+br163_blocked,Jun,649.8,48.12,5.39,Itacoatiara,Sorriso > Porto Velho > Porto Velho (barge) > Itacoatiara > Itacoatiara (ship) > Shanghai
+br163_blocked,Jun,667.2,46.91,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+br163_blocked,Jun,717.3,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+br163_blocked,Jul,652.5,48.12,5.39,Itacoatiara,Sorriso > Porto Velho > Porto Velho (barge) > Itacoatiara > Itacoatiara (ship) > Shanghai
+br163_blocked,Jul,668.8,46.91,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+br163_blocked,Jul,722.3,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+br163_blocked,Aug,663.6,46.91,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+br163_blocked,Aug,706.6,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+br163_blocked,Sep,659,46.91,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+br163_blocked,Sep,692.7,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+br163_blocked,Oct,648.8,46.91,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+br163_blocked,Oct,662.3,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+br163_blocked,Nov,643.3,49.12,7.3,Itacoatiara,Sorriso > Porto Velho > Porto Velho (barge) > Itacoatiara > Itacoatiara (ship) > Shanghai
+br163_blocked,Nov,643.6,46.91,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+br163_blocked,Nov,646.7,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+br163_blocked,Dec,606.4,49.12,9.25,Itacoatiara,Sorriso > Porto Velho > Porto Velho (barge) > Itacoatiara > Itacoatiara (ship) > Shanghai
+br163_blocked,Dec,636.9,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+drought_ferrograo,Jan,486.5,45.11,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Jan,581.1,43.29,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Jan,652.7,46.91,5.39,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+drought_ferrograo,Jan,674,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+drought_ferrograo,Feb,489.9,48.11,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Feb,624.5,46.29,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Feb,672.2,51.91,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+drought_ferrograo,Feb,732.5,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+drought_ferrograo,Mar,491.1,48.11,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Mar,639.4,46.29,8.34,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Mar,678.9,51.91,6.34,Santos,Sorriso > Rondonopolis > Rondonopolis (rail) > Santos > Santos (ship) > Shanghai
+drought_ferrograo,Mar,752.7,49.04,4.44,Santos,Sorriso > Santos > Santos (ship) > Shanghai
+drought_ferrograo,Apr,489.9,48.11,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Apr,588.9,47.44,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Apr,624.8,45.29,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,May,488.7,48.11,8.21,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,May,576.6,47.44,6.34,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,May,608.9,45.29,4.44,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Jun,489,45.11,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Jun,580,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Jun,613.2,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Jul,489.3,45.11,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Jul,582.8,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Jul,616.9,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Aug,488.4,45.11,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Aug,573.8,44.44,5.39,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Aug,605.3,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Sep,501.1,47.11,10.08,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Sep,579.5,46.44,8.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Sep,595,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Oct,499.4,47.11,10.08,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Oct,562.1,46.44,8.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Oct,572.5,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Nov,498.5,47.11,10.08,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Nov,553.1,46.44,8.25,Santarem,Sorriso > Miritituba > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Nov,560.9,42.29,3.47,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Dec,484.3,45.11,7.27,Santarem,Sorriso > Sinop > Sinop (rail) > Miritituba (rail) > Miritituba (barge) > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Dec,553.6,43.29,7.41,Santarem,Sorriso > Santarem > Santarem (ship) > Shanghai
+drought_ferrograo,Dec,636.9,44.04,3.47,Santos,Sorriso > Santos > Santos (ship) > Shanghai

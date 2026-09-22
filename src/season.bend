@@ -25,7 +25,7 @@ def compose(+a: SF, +b: SF) -> SF:
 # effect bits
 def RAINY_ROAD() -> U32:
   1
-def HARVEST_FREIGHT() -> U32:
+def ROAD_PRICE() -> U32:
   2
 def MADEIRA_LOW() -> U32:
   4
@@ -51,9 +51,12 @@ def when(+on: Bool, +f: SF) -> SF:
 def rainy_road(+m: U32) -> SF:
   when(within(m, 11, 2), SF{1.0, 24.0, 1.0, 3.0, True{}})
 
-# Feb-Apr soybean harvest: truck freight premium
-def harvest_freight(+m: U32) -> SF:
-  when(within(m, 1, 3), SF{1.20, 0.0, 1.0, 1.0, True{}})
+# Monthly road-freight factor, from the USDA Brazil truck-rate index
+# (US$/t per 100 miles, monthly, 2018-2025): each month's mean divided by its
+# year's mean. The harvest peak is Feb-Apr; the trough is Nov-Dec.
+def road_price(+m: U32) -> SF:
+  +f : List<&2, F32> = [0.944, 1.075, 1.120, 1.076, 1.028, 1.041, 1.052, 1.017, 0.986, 0.918, 0.883, 0.861]
+  SF{Maybe.default(&2, F32, List.get(&2, F32, f, U32.to_nat(m)), 1.0), 0.0, 1.0, 1.0, True{}}
 
 # Aug-Nov low water on the Madeira: partial loads; a drought year closes Sep-Nov
 def madeira_low(+m: U32, +drought: Bool) -> SF:
@@ -79,7 +82,7 @@ def pick(+mask: U32, +bit: U32, +f: SF) -> SF:
 
 def factor(+mask: U32, +m: U32, +drought: Bool) -> SF:
   compose(pick(mask, RAINY_ROAD(), rainy_road(m)),
-  compose(pick(mask, HARVEST_FREIGHT(), harvest_freight(m)),
+  compose(pick(mask, ROAD_PRICE(), road_price(m)),
   compose(pick(mask, MADEIRA_LOW(), madeira_low(m, drought)),
   compose(pick(mask, TAPAJOS_LOW(), tapajos_low(m, drought)),
   compose(pick(mask, PORT_PEAK_SOUTH(), port_peak_south(m)),

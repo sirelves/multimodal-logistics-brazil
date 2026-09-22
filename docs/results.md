@@ -37,85 +37,102 @@ recourse with tail risk, on the MT corridors. That is the surviving claim.
 
 | Check | Result | Tag |
 |---|---|---|
-| Pareto front = brute-force enumeration of all simple paths (6 month/scenario cases, 2–4 routes each) | identical | VALIDATED |
+| Pareto front = brute-force enumeration of all simple paths (6 month/scenario cases) | identical | VALIDATED |
 | Min of 5 scalarizations over the front = Bellman-Ford optimum | equal to 10⁻⁵ | VALIDATED |
 | Min-cost flow: capacities, conservation, and no negative cycle in the residual graph (3 cases, incl. unmet demand) | all hold | VALIDATED |
 | Hand-solved toy flow (cost 140, marginal 20, max flow 15) | exact | VALIDATED |
-| Monte Carlo mean (2¹⁴ trips) vs closed-form expected cost | 0.08% (Jan), 0.04% (Oct drought) | VALIDATED |
+| Monte Carlo mean (2¹⁴ trips) vs closed-form expected cost | within 0.1% | VALIDATED |
 | Hash uniforms: mean, P(u < 0.1) | 0.498, 0.104 | VALIDATED |
 
-## 2. Pareto fronts (`results/fronts.csv`, `pareto_fronts_by_month.svg`)
+## 2. Does the model reproduce reality? (`validation.csv`, `validation_2024.svg`, `validation_2025.svg`)
 
-- In the dry months (Jun–Aug) the front has **two routes**, both to Santarém
-  (truck + Tapajós barge R$450.5/t, 44.7 d; or truck all the way, R$460/t, 42.3 d).
-  In the rainy months (Dec–Mar) interruption risk on BR-163 rises and the
-  **southern routes enter the front** as the low-risk options (road + Rumo rail to
-  Santos: R$510.5/t, P(interruption) 5.4% vs 9.2%). **MODEL.**
-- Arco Norte dominates single shipments in every month, *because the ocean leg is
-  neutral* and the inland distance is shorter. Real flows still go mostly south
-  because of capacity, which a single-shipment front ignores. This is the reason
-  for layer 2. **MODEL** (and a warning about single-shipment routing).
-- **Ferrogrão**, single shipment: R$396/t vs R$450.5/t (−12%). Break-even rail
-  tariff, from the leg costs: 12 + 20 + 933·r + 15 = 160.5 + 25 gives
-  **r = R$0.148/t·km**, practically the road rate. The saving survives any
-  plausible tariff, because it removes ~990 km of trucking. **MODEL** (closed
-  form, checkable by hand).
+The test: give the model the volume Mato Grosso actually exported each month
+(Comex Stat, soybean + corn, 2024 and 2025) and compare the port split it chooses
+with the observed one, over the five modelled ports.
 
-## 3. Capacitated flow (`seasonal.csv`, `capacity.csv`, charts)
+**It fails, and by how much is the interesting part.** With corridor costs alone
+(USDA tariffs, observed capacities), the mean absolute error of the port shares is
+**13.2 percentage points**: the model sends far more cargo north than Brazil does,
+saturating Barcarena, Santarém and Itacoatiara while the real flow keeps 44–50%
+through Santos. **MODEL, falsified.**
 
-4,000 kt/month from Sorriso, min-cost allocation, by month and scenario.
+Adding one free parameter — a uniform **friction** on the BR-163/BR-364 truck legs,
+i.e. whatever keeps cargo out of the Arco Norte beyond corridor cost — and fitting
+it against the 24 months gives:
 
-| | base | + Ferrogrão | + Rumo ext. | + both |
+| friction (R$/t) | 0 | 10 | 20 | **30** | 40 | 60 | 100 |
+|---|---|---|---|---|---|---|---|
+| mean absolute share error (pp) | 13.2 | 11.5 | 9.7 | **8.6** | 8.8 | 10.5 | 11.9 |
+
+So **R$30/t of unexplained northern friction** (≈ 5% of door-to-door cost) is what
+the data implies, and even then **8.6 pp of error remains**: a single-origin
+least-cost allocation cannot reproduce the split. The residual is structural —
+one origin (real MT has regions at very different distances from Santos),
+take-or-pay rail contracts, and terminal ownership. **MODEL** (fit);
+the reading of the friction as contracts/ownership is **SPECULATIVE**.
+
+This is the main methodological result: the cost-minimizing allocation that most
+of the corridor literature uses is, on its own, off by ~13 pp of market share.
+
+## 3. Pareto fronts (`results/fronts.csv`, `pareto_fronts_by_month.svg`)
+
+- In the dry months the front has **two routes**, both via Santarém (truck + Tapajós
+  barge, R$633/t in June; truck all the way, R$659/t but 2 days faster and less
+  exposed). In the rainy months (Dec–Mar) the risk on BR-163 rises and the
+  **southern routes enter the front** as the low-risk options (March: rail to
+  Santos at R$679/t with 6.3% interruption probability against R$600/t and 10.2%
+  via the barge). **MODEL.**
+- **Ferrogrão**, single shipment: R$486/t vs R$555/t in January (−12%), R$491 vs
+  R$600 in March (−18%). Break-even rail tariff, from the leg costs:
+  **R$0.226/t·km**, essentially the road rate (R$0.229). The saving survives any
+  plausible tariff because it removes ~1,000 km of trucking. **MODEL** (closed form).
+
+## 4. Capacitated flow (`seasonal.csv`, `capacity.csv`, charts)
+
+4,000 kt/month from Sorriso, min-cost allocation, by month and scenario (friction 0:
+these runs isolate corridor cost).
+
+| | base | + Ferrogrão | + both railways | ports ×1.5 |
 |---|---|---|---|---|
-| avg cost Jan (R$/t) | 556.8 | 533.6 (−4.2%) | 553.9 (−0.5%) | 530.7 (−4.7%) |
-| avg cost Feb–Apr peak | 589.7 | 552.6 (−6.3%) | 583.0 (−1.1%) | 546.0 (−7.4%) |
-| marginal cost, peak | 696.3 | 696.3 | 696.3 | 696.3 |
+| avg cost, March peak (R$/t) | 719.2 | 664.4 (−7.6%) | 660.3 (−8.2%) | 714.2 (−0.7%) |
+| marginal cost at 4,000 kt | 741.2 | 741.2 | 738.1 | 738.1 |
+| export ceiling (kt/month) | 6,800 | 6,800 | 6,800 | >7,000 |
 
-- **Railways lower the average, not the marginal.** At 4,000 kt/month the last
-  tonne goes by truck to Paranaguá in every scenario (R$696/t in the peak), because
-  the export terminals are full. The marginal is what sets the freight component
-  of the farm-gate basis in a competitive market. **MODEL**; the price reading is
-  **SPECULATIVE**.
-- **Ferrogrão's benefit is capped downstream.** It lowers the marginal cost
-  only below ~1,750 kt/month (e.g. R$493 vs R$580/t at 1,000 kt): it feeds the same
-  Tapajós barges and Arco Norte terminals (~1,670 kt/month here), and above that the
-  marginal tonne is set elsewhere. **MODEL.**
-- **Export ceiling.** In the March peak the network can export **4,890 kt/month**
-  from Sorriso with or without either railway; with terminals ×1.5, **6,540**
-  (+34%). In this model terminals bind before inland links. This depends directly
-  on assumption 2 (terminal shares), so it is a hypothesis for calibration, not a
-  finding about Brazil. **MODEL.**
-- **Drought year** (Madeira closed, Tapajós at 40% in Sep–Nov): 3,768 of 4,000 kt
-  shipped (−5.8%); **building both railways does not restore it** (3,768), terminal
-  capacity would. **MODEL.**
-- **BR-163 north blocked** (truck legs to Miritituba and Santarém): 3,220 kt
-  shipped in Jan (−19.5%), 3,010 in Aug–Nov (−24.8%, low water on top); the cost of
-  what is shipped rises R$31/t. **MODEL.**
+- **Railways lower the average, not the marginal, and not the ceiling.** Confirmed
+  after calibration: Ferrogrão carries its full 2,000 kt/month and cuts the average
+  by R$35–55/t, while the last tonne still costs R$741/t, and the maximum
+  exportable volume is unchanged. Only terminal capacity moves the ceiling. **MODEL.**
+- **The drought no longer strands cargo, it re-routes it at a higher price.** With
+  the observed (larger) terminal capacities, closing the Madeira and restricting the
+  Tapajós in Sep–Nov still ships 4,000 kt, pushing 1,000–2,500 kt/month onto Santos
+  and raising the cost by R$8–10/t. At volumes near the ceiling the shortfall
+  returns. This **reverses the pre-calibration conclusion**, which had 5.8% of the
+  volume stranded. **MODEL.**
+- **Seasonality is now empirical**: the road-price factor comes from the USDA
+  monthly truck index (Mar 1.12, Dec 0.86 of the annual mean), so the average cost
+  swings R$651/t (Dec) to R$719/t (Mar), −9.5% to +4% around the year. **MODEL.**
 
-## 4. Interruptions (`disruption_by_month.csv`, `front_risk_jan.csv`, charts)
+## 5. Interruptions (`disruption_by_month.csv`, `front_risk_jan.csv`, charts)
 
-2¹⁴ sampled trips per case, expected-cost route.
+2¹⁴ sampled trips per case, expected-cost route, calibrated costs.
 
 | Month | fixed: mean | fixed: CVaR95 | adaptive: mean | adaptive: CVaR95 | CVaR change |
 |---|---|---|---|---|---|
-| Jan | 512.0 | 624.0 | 508.1 | 546.0 | −12.5% |
-| Feb–Mar | 547.7 | 660.0 | 544.2 | 589.7 | −10.7% |
-| Jun–Aug | 506.9 | 561.9 | 505.4 | 530.7 | −5.6% |
-| Sep–Nov | 509.7 | 576.2 | 507.8 | 539.4 | −6.4% |
+| Jan | 616.3 | 728.4 | 613.1 | 665.1 | −8.7% |
+| Mar | 665.0 | 777.3 | 662.3 | 722.2 | −7.1% |
+| Aug | 630.0 | 685.0 | 628.8 | 661.9 | −3.4% |
+| Dec | 595.0 | 707.2 | 591.6 | 639.3 | −9.6% |
 
-- **Re-planning at a failure cuts the tail far more than the mean**: CVaR95
-  −6% to −13%, mean −0.3% to −0.8%; worst trip R$1,193 → R$797 in January. **MODEL.**
-- **Flexibility beats route choice for tail risk.** Across the January Pareto
-  front (each route followed as a fixed plan), the lowest-CVaR route (road + rail to
-  Santos, CVaR95 612.9) is only R$11/t better in the tail than the cheapest route and
-  costs R$57/t more on average; the ability to re-plan buys R$78/t of tail at no
-  mean cost. **MODEL**; the general statement is **SPECULATIVE** (it depends on the
-  unsourced interruption probabilities, delays and the R$25/t re-planning fee).
-- In a drought year the expected-cost route in Sep–Nov switches from barge to
-  truck-only to Santarém (the barge got riskier), which is why the drought curve
-  sits *below* the base curve in those months. **MODEL.**
+- **Re-planning at a failure still cuts the tail far more than the mean**: CVaR95
+  −3% to −10%, mean −0.2% to −0.6%; worst trip R$1,346 → R$950 in March. The effect
+  is smaller than before calibration (−6% to −13%) because freight is now more
+  expensive, so a delay is a smaller share of the total. **MODEL.**
+- **Flexibility beats route choice for tail risk**, as before: the lowest-CVaR route
+  on the January front costs ~R$60/t more on average than the cheapest, while
+  re-planning buys the tail reduction at no mean cost. **MODEL**; the interruption
+  probabilities and delays are still unsourced, so the size is **SPECULATIVE**.
 
-## 5. Parallel Monte Carlo in Bend 2 (`results/benchmark.csv`)
+## 6. Parallel Monte Carlo in Bend 2 (`results/benchmark.csv`)
 
 262,144 trips (a depth-18 tree of parallel calls), native build, Apple M2
 (4 performance + 4 efficiency cores), best of 3 runs:
@@ -129,13 +146,26 @@ Identical results on every thread count (the random numbers depend only on the
 trip index). The speed-up needed no code change: the recursion `a b = tree(k, ..)
 tree(k, ..)` *is* the parallel schedule. **VALIDATED** (for this machine).
 
-## 6. What would change the conclusions
+## 7. What is calibrated, and what is not
 
-- Calibrated terminal capacities (who else uses Santos/Paranaguá, by month):
-  decides whether "terminals bind first" survives.
-- An ocean-freight differential by port (draft, distance via Panama vs Cape).
-- Real interruption statistics (frequency and duration per corridor, e.g. from
-  PRF road-closure records and ANTAQ/Navy navigation restrictions).
+Calibrated (see `data-sources.md`): road, rail and barge tariffs and the monthly
+road-price factor (USDA AgTransport 2024Q1–2025Q3); ocean freight per port to
+Shanghai (Santos R$197/t … Barcarena R$218/t — the Arco Norte is *more* expensive
+to China, the opposite of the neutral assumption used before); leg distances;
+terminal capacities (highest month of MT grain ever cleared through each port);
+the monthly volume to allocate; grain elevation R$55/t.
+
+Still uncalibrated: interruption probabilities and delays (no published series),
+stall costs, value of time, the R$25/t re-planning fee, rail capacity, and the
+split of a terminal's capacity between MT and other states.
+
+## 8. What would change the conclusions
+
+- **Multiple origins.** The single Sorriso origin is the clearest defect: MT's
+  regions differ by ~1,000 km in distance to Santos, and USDA quotes separate
+  tariffs for North, Northeast and Southeast MT. This is the first thing to fix.
+- Take-or-pay rail and terminal-ownership constraints, which the fitted R$30/t
+  friction is standing in for.
+- Real interruption statistics (frequency and duration per corridor).
 - Correlated disruptions in the Monte Carlo (one blockade hits every truck).
-- Harvest-shaped monthly supply and storage between months (turns layer 2 into a
-  multi-period flow).
+- Storage between months (turns layer 2 into a multi-period flow).

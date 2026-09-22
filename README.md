@@ -9,7 +9,11 @@ A reproducible study of one question:
 Everything is written in **pure [Bend 2](https://github.com/bendlang/bend)**:
 network, algorithms, Monte Carlo, tests and the SVG plotting.
 
-**Short answer (for a stylized, uncalibrated network):**
+Tariffs, distances, seasonality, ocean freight per port, terminal capacities and
+monthly volumes are calibrated against **USDA AgTransport** and **Comex Stat**;
+interruption probabilities are not (`docs/data-sources.md`).
+
+**Short answer:**
 
 1. There is **no algorithmic novelty to claim**: at this scale exact textbook
    methods (Pareto label correcting, min-cost flow, Monte Carlo + CVaR) solve
@@ -20,14 +24,20 @@ network, algorithms, Monte Carlo, tests and the SVG plotting.
    al. 2023) and re-routing after disruption in the Brazilian network (L'Her et al.
    2024) all exist. What survives as new is **seasonal capacity inside the
    optimization**, coupled to the front and to recourse, on the MT corridors.
-2. In the model, **export terminals bind before inland links**: new railways
-   (Ferrogrão, Rumo extension) lower the *average* cost by 4–7% but leave the
-   *marginal* cost and the export ceiling unchanged; +50% terminal capacity raises
-   the ceiling by 34%. This rests on assumed terminal shares and is a hypothesis for
-   calibration, not a finding about Brazil.
-3. **Re-planning at a failure** cuts the tail cost (CVaR95) by 6–13% at almost
+2. **The least-cost allocation does not reproduce reality.** Fed the volume MT
+   actually exported each month of 2024–2025, the model's port split is off by
+   **13 percentage points** on average — it over-uses the Arco Norte. One fitted
+   parameter (R$30/t of friction on the BR-163/BR-364 hauls) brings it to 8.6 pp
+   and no further: a single-origin least-cost model is structurally insufficient.
+3. **Railways lower the average cost, not the marginal cost and not the ceiling.**
+   Ferrogrão cuts the average by 7–8% and fills its own capacity, while the last
+   tonne still costs the same and the maximum exportable volume does not move;
+   only terminal capacity moves it. With calibrated capacities a drought year
+   **re-routes** cargo south at a higher price instead of stranding it — the
+   opposite of what the uncalibrated model said.
+4. **Re-planning at a failure** cuts the tail cost (CVaR95) by 3–10% at almost
    no change in the mean; choosing a "safer" route buys much less.
-4. The Monte Carlo is a tree of Bend parallel calls: **5.1× on 8 threads** (M2)
+5. The Monte Carlo is a tree of Bend parallel calls: **5.1× on 8 threads** (M2)
    with identical results.
 
 Full report with tags (KNOWN / VALIDATED / MODEL / SPECULATIVE):
@@ -41,6 +51,7 @@ docs/
   assumptions.md         everything that is stylized or missing
   data-sources.md        sourced ranges (with confidence tags) and the value used for each parameter
   literature-review.md   what is known, and where a contribution could sit
+  litsearch/             the search log and the coverage matrix behind it
   results.md             results, each tagged
 src/
   graph.bend             arcs and list helpers
@@ -52,8 +63,9 @@ src/
   flow.bend              min-cost flow by successive shortest paths + optimality certificate
   risk.bend              interruptions: stateless RNG, fixed vs adaptive policies, parallel scenario tree, CVaR
   brute.bend             exhaustive path enumeration (test oracle)
+  observed.bend          MT exports by port and month (Comex Stat), the validation target
   report.bend, svg.bend, io.bend, num.bend   formatting, charts, files
-simulations/             fronts, seasonal, capacity, disruption, bench
+simulations/             validation, fronts, seasonal, capacity, disruption, bench
 tests/tests.bend         42 checks
 scripts/bench.sh         native build + thread scaling
 results/                 generated CSV and SVG
@@ -64,7 +76,7 @@ results/                 generated CSV and SVG
 ```bash
 curl -fsSL https://bend-lang.com/install.sh | sh   # Bend 2 (tested with 2.0.25)
 make test      # 42 checks, ~2 s  -> "All checks passed."
-make figures   # regenerates results/, ~35 s on an M2
+make figures   # regenerates results/, ~75 s on an M2 (validation included)
 make bench     # native build, 1/2/4/8 threads (needs clang >= 14; see Makefile)
 ```
 
@@ -72,6 +84,8 @@ make bench     # native build, 1/2/4/8 threads (needs clang >= 14; see Makefile)
 
 | | |
 |---|---|
+| ![](results/validation_2025.svg) | ![](results/validation_fit.svg) |
+| Model (dashed) vs Comex Stat (solid): the least-cost split over-uses the north. | How much friction the northern corridors need before the split fits: R$30/t, and 8.6 pp of error survives. |
 | ![](results/pareto_fronts_by_month.svg) | ![](results/supply_curve_marginal.svg) |
 | Pareto fronts: southern routes enter only in the rainy season, as the low-risk options. | Logistics supply curve: railways shift the start, terminals set the ceiling. |
 | ![](results/seasonal_cost.svg) | ![](results/seasonal_shipped.svg) |

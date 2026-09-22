@@ -63,7 +63,51 @@ Every value actually used by the model is in `src/params.bend` and
 - **FICO (EF-354)**: ~36% complete (Apr 2025).
 - **Rumo MT extension**: phase 1 (Rondonópolis→Campo Verde, 162 km) 2026; full line to Lucas do Rio Verde targeted 2031.
 
-## 7. What the model uses, and why
+## 7. Calibration (2026-09-22): USDA AgTransport and Comex Stat
+
+Two machine-readable sources replaced most of the guesses above.
+
+**USDA AgTransport** (the data behind AMS's *Brazil Soybean Transportation*
+quarterly), Socrata API, 2023Q1–2025Q3:
+- leg tariffs, [`j7xv-dz9h`](https://agtransport.usda.gov/d/j7xv-dz9h) and
+  [`wcku-8yrp`](https://agtransport.usda.gov/d/wcku-8yrp) (in the latter, `rate` is
+  US$/t **per 100 miles**);
+- ocean freight per port, [`j6ns-hzra`](https://agtransport.usda.gov/d/j6ns-hzra);
+- monthly Brazilian truck-rate index, [`i4ty-m7hq`](https://agtransport.usda.gov/d/i4ty-m7hq).
+
+**Comex Stat** (MDIC), [API](https://api-comexstat.mdic.gov.br/general): MT exports
+of soybean (NCM 12019000) and corn (10059010) by exit customs unit and month,
+2023-01 to 2026-08. Note `state` takes the numeric code (52 = MT), the customs unit
+is not exactly the port (Barcarena clears as ALF-BELÉM, Itacoatiara as PORTO DE
+MANAUS), and MDIC warns the two concepts only usually coincide.
+
+| Parameter | Calibrated value | Source | Was |
+|---|---|---|---|
+| road freight | R$7.8/t + R$0.2294/t·km (least squares over the six North MT legs, 2024Q1–2025Q3) | USDA [S] | R$0.15/t·km |
+| rail freight | R$0.1587/t·km (Rondonópolis–Santos) | USDA [S] | R$0.09/t·km |
+| barge freight | R$20.9/t + R$0.0992/t·km (Itaituba–Santarém and Itaituba–Barcarena) | USDA [S] | R$0.05/t·km |
+| ocean to Shanghai | Santos R$196.9/t, Paranaguá 205.2, Santarém 213.4, Barcarena 217.8, Itacoatiara = Barcarena [A] | USDA [S] | R$220/t, equal for every port |
+| monthly road factor | Jan 0.944, Feb 1.075, Mar 1.120, Apr 1.076, May 1.028, Jun 1.041, Jul 1.052, Aug 1.017, Sep 0.986, Oct 0.918, Nov 0.883, Dec 0.861 | USDA index 2018–2025 [S] | ×1.20 in Feb–Apr |
+| distances | Sorriso→Rondonópolis 615, →Porto Velho 1,017, →Miritituba 1,081, →Santarém 1,410, →Santos 1,915, →Paranaguá 2,031 km; rail 1,640; barge 246 and 966 km | USDA [S] | mixed, two unsourced |
+| terminal capacity (kt/month) | Santos 2,700, Barcarena 2,150, Santarém 890, Itacoatiara 790, Paranaguá 270 | highest month of MT grain ever cleared there, Comex Stat [S] (a revealed floor, not nameplate) | assumed shares |
+| transshipment at inland terminals | 0 (already inside the USDA rail and barge quotes) | USDA note [S] | R$20–25/t |
+| elevation onto the ship | R$55/t | ANTAQ tariff table, Terminal XXXIX Santos [S] | R$30/t |
+| monthly volume to allocate | observed MT soy+corn exports, 2024 and 2025 (1,700–5,000 kt/month) | Comex Stat [S] | flat 4,000 kt/month |
+
+**The old guesses were badly off**: road was 35% low, rail 43% low, barge 50% low;
+and the ocean leg is *not* neutral — the Arco Norte costs US$3–4/t more to China
+(and less to Hamburg), the opposite of the intuition the neutral assumption fed.
+
+Still uncalibrated: every interruption probability and delay, stall costs, value of
+time, the re-planning fee, rail capacity, and how much of a terminal's capacity is
+available to MT. No public series was found for BR-163 closure days or for
+navigation-restriction days on the Madeira/Tapajós; only dated events (Madeira
+grain traffic suspended from September to 27 November 2024; Tapajós suspended
+around 4 October 2024, back at 50% on 27 November).
+
+## 8. Superseded: the original stylized values
+
+(kept for the record; these are what the pre-calibration results used)
 
 | Parameter (file) | Value | Basis |
 |---|---|---|

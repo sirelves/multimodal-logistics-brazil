@@ -26,11 +26,11 @@
 <line x1="84" y1="56" x2="736" y2="56" stroke="#e4e2dc" stroke-width="1"/>
 <text x="76" y="60" text-anchor="end" font-size="12" fill="#52514e">700</text>
 <g clip-path="url(#plot)">
-<path d="M84 385.1 L143.3 322.5 L202.5 322.5 L261.8 330.9 L321.1 387.4 L380.4 393.9 L439.6 393.9 L498.9 393.9 L558.2 389.1 L617.5 389.1 L676.7 389.1 L736 385.1 " fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2 4"/>
-<path d="M84 189 L143.3 125.9 L202.5 125.9 L261.8 231.5 L321.1 287.7 L380.4 297.6 L439.6 297.6 L498.9 297.6 L558.2 272.6 L617.5 272.6 L676.7 272.6 L736 189 " fill="none" stroke="#e34948" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray=""/>
-<path d="M84 325.6 L143.3 249 L202.5 249 L261.8 281.4 L321.1 342.4 L380.4 352.2 L439.6 352.2 L498.9 352.2 L558.2 337 L617.5 337 L676.7 337 L736 325.6 " fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray=""/>
-<path d="M84 189 L143.3 125.9 L202.5 125.9 L261.8 231.5 L321.1 287.7 L380.4 297.6 L439.6 297.6 L498.9 297.6 L558.2 322.3 L617.5 322.3 L676.7 322.3 L736 189 " fill="none" stroke="#e34948" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
-<path d="M84 325.6 L143.3 249 L202.5 249 L261.8 281.4 L321.1 342.4 L380.4 352.2 L439.6 352.2 L498.9 352.2 L558.2 362.9 L617.5 362.9 L676.7 362.9 L736 325.6 " fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
+<path d="M84 202.5 L143.3 137.1 L202.5 117.2 L261.8 145.3 L321.1 166.9 L380.4 167.6 L439.6 162.9 L498.9 178.5 L558.2 182.2 L617.5 212.5 L676.7 228.3 L736 239.7 " fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2 4"/>
+<path d="M84 6.3 L143.3 -59.2 L202.5 -79.3 L261.8 45.9 L321.1 67.4 L380.4 71.5 L439.6 66.6 L498.9 82.3 L558.2 65.8 L617.5 96.3 L676.7 111.9 L736 43.5 " fill="none" stroke="#e34948" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray=""/>
+<path d="M84 117 L143.3 40.2 L202.5 17.1 L261.8 85.2 L321.1 107.7 L380.4 111.8 L439.6 106.5 L498.9 122.7 L558.2 114.6 L617.5 147.3 L676.7 164.2 L736 162.2 " fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray=""/>
+<path d="M84 6.3 L143.3 -59.2 L202.5 -79.3 L261.8 45.9 L321.1 67.4 L380.4 71.5 L439.6 66.6 L498.9 82.3 L558.2 5 L617.5 35.4 L676.7 145.7 L736 43.5 " fill="none" stroke="#e34948" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
+<path d="M84 117 L143.3 40.2 L202.5 17.1 L261.8 85.2 L321.1 107.7 L380.4 111.8 L439.6 106.5 L498.9 122.7 L558.2 65.5 L617.5 98.6 L676.7 187.6 L736 162.2 " fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
 </g>
 <line x1="84" y1="406" x2="736" y2="406" stroke="#8d8b85" stroke-width="1"/>
 <line x1="84" y1="56" x2="84" y2="406" stroke="#8d8b85" stroke-width="1"/>

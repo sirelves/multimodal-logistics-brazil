@@ -87,6 +87,15 @@ numbers, so month-to-month differences are not sampling noise).
 
 Statistics: mean, P95, CVaR95 (mean of the worst 5%; Rockafellar & Uryasev 2000), max.
 
+## 4. Validation (`simulations/validation.bend`)
+
+The monthly volume MT actually exported (Comex Stat, `src/observed.bend`) is fed
+to layer 2 and the resulting port split is compared with the observed one; the
+error metric is the mean absolute difference of the five port shares, in
+percentage points, over 24 months. A single free parameter (a friction added to
+the northern truck legs) is swept from R$0 to R$200/t, and the whole error curve
+is published (`results/validation_fit.csv`) rather than only its minimum.
+
 ## What is *not* modelled
 
 See `assumptions.md`: monthly (not hourly) time, no correlated disruptions, no

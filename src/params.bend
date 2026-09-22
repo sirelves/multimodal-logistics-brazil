@@ -21,12 +21,41 @@ def mode_name(+m: U32) -> String:
       Bool.pick(String, U32.is_eq(m, 2), "barge",
         Bool.pick(String, U32.is_eq(m, 3), "ship", "transfer"))))
 
-# freight rate, R$ per t per km
+# Freight = fixed(mode) + rate(mode) * km, in R$/t, fitted to USDA AgTransport
+# "Brazil soybean transportation" quarterly tables, 2024Q1-2025Q3, at R$5.5/US$:
+#   road  least squares over the six North MT (Sorriso) legs: US$1.41 + 0.0417/km
+#   rail  Rondonopolis-Santos, 1,640 km: US$0.0289/t.km
+#   barge Itaituba-Santarem (246 km) and Itaituba-Barcarena (966 km)
+# The barge quote includes transshipment at the Itaituba (Miritituba) terminal
+# and the rail quote its yard, so the inland transfer legs carry no extra cost.
+# Ocean is a per-port price, not a rate (see network.bend).
 def rate(+m: U32) -> F32:
-  Bool.pick(F32, U32.is_eq(m, 0), 0.15,
-    Bool.pick(F32, U32.is_eq(m, 1), 0.09,
-      Bool.pick(F32, U32.is_eq(m, 2), 0.05,
-        Bool.pick(F32, U32.is_eq(m, 3), 0.01, 0.0))))
+  Bool.pick(F32, U32.is_eq(m, 0), 0.2294,
+    Bool.pick(F32, U32.is_eq(m, 1), 0.1587,
+      Bool.pick(F32, U32.is_eq(m, 2), 0.0992,
+        Bool.pick(F32, U32.is_eq(m, 3), 0.0, 0.0))))
+
+def fixed(+m: U32) -> F32:
+  Bool.pick(F32, U32.is_eq(m, 0), 7.8,
+    Bool.pick(F32, U32.is_eq(m, 2), 20.9, 0.0))
+
+# ocean freight to Shanghai, R$/t, USDA 2024Q1-2025Q3 means at R$5.5/US$
+# (Santos 35.8, Paranagua 37.3, Santarem 38.8, Barcarena 39.6 US$/t;
+#  Itacoatiara is not quoted and is assumed equal to Barcarena)
+def ocean_santos() -> F32:
+  196.9
+def ocean_paranagua() -> F32:
+  205.2
+def ocean_santarem() -> F32:
+  213.4
+def ocean_barcarena() -> F32:
+  217.8
+def ocean_itacoatiara() -> F32:
+  217.8
+
+# grain elevation onto the ship, R$/t (ANTAQ tariff table, Terminal XXXIX Santos)
+def elevation() -> F32:
+  55.0
 
 # effective speed including stops, km/h
 def speed(+m: U32) -> F32:
