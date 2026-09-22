@@ -52,6 +52,8 @@ def ocean_barcarena() -> F32:
   217.8
 def ocean_itacoatiara() -> F32:
   217.8
+def ocean_itaqui() -> F32:
+  216.2
 
 # grain elevation onto the ship, R$/t (ANTAQ tariff table, Terminal XXXIX Santos)
 def elevation() -> F32:

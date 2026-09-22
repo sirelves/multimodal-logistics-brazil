@@ -158,3 +158,12 @@ def mem(+xs: List<&2, U32>, +x: U32) -> Bool:
       False{}
     case h <> t:
       Bool.or(U32.is_eq(h, x), mem(t, x))
+
+# Replace the capacity of one arc (used to set per-origin supply).
+def set_cap(+xs: List<&2, Arc>, +id: U32, +cap: F32) -> List<&2, Arc>:
+  match xs:
+    case []:
+      []
+    case a <> t:
+      Arc{i, s, d, m, c, h, r, k} = a
+      cons_if(True{}, Arc{i, s, d, m, c, h, r, Bool.pick(F32, U32.is_eq(i, id), cap, k)}, set_cap(t, id, cap))

@@ -179,8 +179,11 @@ def checks() -> List<&2, Check>:
      truth("season: no effect bits = identity factor", Bool.and(F32.is_eq(S.SF.cmul(S.factor(0, 3, True{})), 1.0), F32.is_eq(S.SF.tadd(S.factor(0, 3, True{})), 0.0))),
      truth("drought closes the Madeira barge in Oct, not in Jun", Bool.and(Bool.not(has_leg(N.arcs(9, drought()), 18)), has_leg(N.arcs(5, drought()), 18))),
      truth("normal year keeps the Madeira barge open in Oct", has_leg(N.arcs(9, N.base()), 18)),
-     truth("base network has 25 legs, with both railways 30", Bool.and(Nat.is_eq(List.length(&2, G.Arc, N.arcs(5, N.base())), 25n),
-       Nat.is_eq(List.length(&2, G.Arc, N.arcs(5, N.rails())), 30n))),
+     truth("base network has 37 legs, with both railways 42", Bool.and(Nat.is_eq(List.length(&2, G.Arc, N.arcs(5, N.base())), 37n),
+       Nat.is_eq(List.length(&2, G.Arc, N.arcs(5, N.rails())), 42n))),
+     truth("per-origin supply caps reach the flow model", Bool.and(
+       F32.is_eq(G.Arc.cap(Maybe.default(&2, G.Arc, G.arc_at(N.set_supply(N.arcs(5, N.base()), 100.0, 50.0, 25.0), 31), G.Arc{0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0})), 50.0),
+       F32.is_eq(G.Arc.cap(Maybe.default(&2, G.Arc, G.arc_at(N.set_supply(N.arcs(5, N.base()), 100.0, 50.0, 25.0), 32), G.Arc{0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0})), 25.0))),
      truth("a blocked leg leaves the graph", Bool.not(has_leg(N.arcs(0, blocked163()), 3))),
      truth("mode changes only through transfer legs (Jan and Oct fronts, all scenarios)",
        Bool.and(fronts_modes_ok(N.arcs(0, N.base()), P.front(nn(), N.arcs(0, N.base()), N.SOR(), N.CHN())),

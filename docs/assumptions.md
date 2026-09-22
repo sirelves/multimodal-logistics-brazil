@@ -8,10 +8,12 @@ model is not the world — and `results.md` §2 measures exactly how far off it 
 
 ## Structure
 
-1. **One origin.** Sorriso stands for the whole of MT, which is wrong by ~1,000 km
-   for the southeastern part of the state, and is the main reason the model cannot
-   reproduce the observed port split (`results.md` §2). USDA publishes separate
-   tariffs for North, Northeast and Southeast MT; using them is the next step.
+1. **Three origin regions** (North MT / Sorriso, Northeast MT / Canarana,
+   Southeast MT / Primavera do Leste), with USDA tariffs for each, fed by a
+   super-source whose arc capacities carry the origin split. Only the northern
+   region has northern corridors, which is what the USDA quotes imply. The split
+   (60/40) is fitted on 2024, not sourced. Every result outside `results.md` §2
+   still uses the single Sorriso origin, to isolate corridor mechanisms.
 2. **Terminal capacity = revealed floor.** Each port's capacity is the highest
    month of MT grain ever cleared through it (Comex Stat 2023–2026). That is a
    lower bound on what is available to MT, not nameplate capacity, and it is
@@ -29,10 +31,12 @@ model is not the world — and `results.md` §2 measures exactly how far off it 
    departure-time dependence inside the month and no inventory carried between
    months. The seasonal runs use a flat 4,000 kt/month to isolate network effects;
    the validation runs use the observed monthly volume.
-6. **The fitted friction (R$30/t)** on the northern truck legs is a free parameter
-   with no direct source: it absorbs contracts, terminal ownership and origin
-   heterogeneity. It is used only in the validation run; every other result uses
-   friction 0.
+6. **The friction parameter** (R$/t added to the northern truck hauls) is kept in
+   the code and swept in `validation_friction.csv`, but the fitted model does not
+   use it: with three origins its best value is zero.
+6b. **Itaqui is reachable only by truck** in the network (1,894 km from Canarana),
+   so the model never uses it, while 5–7% of MT grain does. The missing piece is
+   the Ferrovia Norte-Sul.
 7. **Two railways as what-ifs.** Ferrogrão (planned) and the Rumo extension to
    Lucas do Rio Verde (under construction, 2031) use the same rail rate, speed and
    risk as the existing Rumo line. Their real tariffs are unknown; the Ferrogrão

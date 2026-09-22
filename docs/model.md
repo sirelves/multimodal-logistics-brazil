@@ -17,8 +17,8 @@ A directed graph *G = (V, A)* evaluated for one **month** *m* and one **scenario
   multiplies cost / capacity / interruption probability or adds hours, and they
   compose.
 
-23 nodes, 30 legs (25 in the base network). Origin `Sorriso` (the north-central
-MT cluster), destination `Shanghai`, five export ports.
+28 nodes, 42 legs (37 in the base network). Three origin regions behind a
+super-source, destination `Shanghai`, six export ports.
 
 Each arc *a* carries
 
@@ -91,10 +91,16 @@ Statistics: mean, P95, CVaR95 (mean of the worst 5%; Rockafellar & Uryasev 2000)
 
 The monthly volume MT actually exported (Comex Stat, `src/observed.bend`) is fed
 to layer 2 and the resulting port split is compared with the observed one; the
-error metric is the mean absolute difference of the five port shares, in
-percentage points, over 24 months. A single free parameter (a friction added to
-the northern truck legs) is swept from R$0 to R$200/t, and the whole error curve
-is published (`results/validation_fit.csv`) rather than only its minimum.
+error metric is the mean absolute difference of the six port shares, in percentage
+points. Supply enters through a super-source whose three arcs carry the origin
+split between North, Northeast and Southeast MT; their capacities are set per
+month by `N.set_supply`.
+
+Two free parameters are swept on a grid — the origin split (0.1 steps on the
+simplex) and a friction on the northern truck hauls (R$0–100/t) — fitted on 2024
+and then applied unchanged to 2025. Both whole grids are published
+(`results/validation_fit.csv`, `results/validation_friction.csv`), not only their
+minima.
 
 ## What is *not* modelled
 

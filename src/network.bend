@@ -53,16 +53,28 @@ def CHN() -> U32:
   21
 def MIR_RAIL() -> U32:
   22
+# a super-source feeding the three origin regions, and the eastern corridors
+def SRC() -> U32:
+  23
+def CAN() -> U32:
+  24
+def PRI() -> U32:
+  25
+def ITQ() -> U32:
+  26
+def ITQ_SHIP() -> U32:
+  27
 
 def n_nodes() -> Nat:
-  23n
+  28n
 
 def node_name(+i: U32) -> String:
   +names : List<&2, String> = ["Sorriso", "Sinop", "Lucas do Rio Verde", "Rondonopolis", "Rondonopolis (rail)",
     "Lucas (rail)", "Sinop (rail)", "Miritituba", "Miritituba (barge)", "Porto Velho",
     "Porto Velho (barge)", "Santos", "Paranagua", "Santarem", "Barcarena", "Itacoatiara",
     "Santos (ship)", "Paranagua (ship)", "Santarem (ship)", "Barcarena (ship)", "Itacoatiara (ship)",
-    "Shanghai", "Miritituba (rail)"]
+    "Shanghai", "Miritituba (rail)", "Mato Grosso", "Canarana", "Primavera do Leste",
+    "Itaqui", "Itaqui (ship)"]
   Maybe.default(&2, String, List.get(&2, String, names, U32.to_nat(i)), "?")
 
 # ---- infrastructure that may or may not exist ----
@@ -178,10 +190,33 @@ def legs() -> List<&2, Leg>:
    Leg{27, BAR_SHIP(), CHN(), H, 22000.0, P.ocean_barcarena(), 0.0, big(), 0, EXISTING()},
    Leg{28, ITA_SHIP(), CHN(), H, 22000.0, P.ocean_itacoatiara(), 0.0, big(), 0, EXISTING()},
    # rail -> barge at Miritituba (Ferrograo terminus)
-   Leg{29, MIR_RAIL(), MIR_BARGE(), X, 0.0, 0.0, 12.0, 2000.0, 0, FERROGRAO()}]
+   Leg{29, MIR_RAIL(), MIR_BARGE(), X, 0.0, 0.0, 12.0, 2000.0, 0, FERROGRAO()},
+   # --- three origin regions fed by a super-source; the caps of legs 30..32 are
+   # the region's share of the month's volume, set by set_supply() ---
+   Leg{30, SRC(), SOR(), X, 0.0, 0.0, 0.0, big(), 0, EXISTING()},
+   Leg{31, SRC(), CAN(), X, 0.0, 0.0, 0.0, big(), 0, EXISTING()},
+   Leg{32, SRC(), PRI(), X, 0.0, 0.0, 0.0, big(), 0, EXISTING()},
+   # Northeast MT (Canarana) and Southeast MT (Primavera do Leste): USDA quotes
+   # them only to the southern ports and to Itaqui, which is what they use
+   Leg{33, CAN(), SSZ(), R, 1529.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   Leg{34, CAN(), PNG(), R, 1730.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   Leg{35, CAN(), ITQ(), R, 1894.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   Leg{36, PRI(), SSZ(), R, 1450.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   Leg{37, PRI(), PNG(), R, 1569.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   # road to the Rondonopolis rail terminal (distances approximate)
+   Leg{38, PRI(), RON(), R, 215.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   Leg{39, CAN(), RON(), R, 600.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   # Itaqui: elevation and ocean (USDA Sao Luis), capacity = observed peak
+   Leg{40, ITQ(), ITQ_SHIP(), X, 0.0, P.elevation(), 48.0, 460.0, S.PORT_PEAK_NORTH(), EXISTING()},
+   Leg{41, ITQ_SHIP(), CHN(), H, 22000.0, P.ocean_itaqui(), 0.0, big(), 0, EXISTING()}]
 
 def n_legs() -> Nat:
-  30n
+  42n
+
+# Supply of each origin region for this month, kt: North MT (Sorriso),
+# Northeast MT (Canarana), Southeast MT (Primavera do Leste).
+def set_supply(+as: List<&2, G.Arc>, +north: F32, +ne: F32, +se: F32) -> List<&2, G.Arc>:
+  G.set_cap(G.set_cap(G.set_cap(as, 30, north), 31, ne), 32, se)
 
 def built(+sc: Scenario, +infra: U32) -> Bool:
   Scenario{f, r, d, b, x, fr} = sc

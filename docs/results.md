@@ -44,35 +44,43 @@ recourse with tail risk, on the MT corridors. That is the surviving claim.
 | Monte Carlo mean (2¹⁴ trips) vs closed-form expected cost | within 0.1% | VALIDATED |
 | Hash uniforms: mean, P(u < 0.1) | 0.498, 0.104 | VALIDATED |
 
-## 2. Does the model reproduce reality? (`validation.csv`, `validation_2024.svg`, `validation_2025.svg`)
+## 2. Does the model reproduce reality? (`validation.csv`, `validation_fit.csv`, charts)
 
 The test: give the model the volume Mato Grosso actually exported each month
 (Comex Stat, soybean + corn, 2024 and 2025) and compare the port split it chooses
-with the observed one, over the five modelled ports.
+with the observed one, over the six modelled ports. Parameters are fitted on 2024
+and then applied unchanged to 2025.
 
-**It fails, and by how much is the interesting part.** With corridor costs alone
-(USDA tariffs, observed capacities), the mean absolute error of the port shares is
-**13.2 percentage points**: the model sends far more cargo north than Brazil does,
-saturating Barcarena, Santarém and Itacoatiara while the real flow keeps 44–50%
-through Santos. **MODEL, falsified.**
+| variant | free parameters | 2024 (fitted) | 2025 (out of sample) |
+|---|---|---|---|
+| one origin (Sorriso), corridor cost only | none | 10.3 pp | 11.0 pp |
+| one origin + a fitted friction on the northern hauls | 1 (R$30/t) | 7.3 pp | 7.7 pp |
+| **three origin regions, no friction** | 1 (the origin split) | **6.9 pp** | **7.0 pp** |
 
-Adding one free parameter — a uniform **friction** on the BR-163/BR-364 truck legs,
-i.e. whatever keeps cargo out of the Arco Norte beyond corridor cost — and fitting
-it against the 24 months gives:
+(pp = mean absolute error of the six port shares, averaged over 12 months.)
 
-| friction (R$/t) | 0 | 10 | 20 | **30** | 40 | 60 | 100 |
-|---|---|---|---|---|---|---|---|
-| mean absolute share error (pp) | 13.2 | 11.5 | 9.7 | **8.6** | 8.8 | 10.5 | 11.9 |
+- **A single-origin least-cost allocation is off by ~11 points of market share.**
+  It over-uses the Arco Norte, because from Sorriso the northern corridors are
+  genuinely cheaper. **MODEL, falsified.**
+- **Geography explains more than a fudge factor.** Splitting the state's volume
+  between North MT (Sorriso), Northeast MT (Canarana) and Southeast MT (Primavera
+  do Leste) — USDA quotes tariffs for all three — and giving the eastern regions
+  only the southern corridors they actually use, beats the fitted friction *and*
+  needs no invented cost. Adding the friction on top makes it worse: the two were
+  substitutes for the same missing geography. **MODEL.**
+- **The fitted split is 60% North MT / 40% eastern MT**, which is the shape of the
+  state's production geography; how the 40% divides between Northeast and
+  Southeast does not matter here, because the model gives both the same options.
+  The split is fitted, not sourced — IMEA regional production would test it. **MODEL.**
+- **~7 pp of error survives**, and part of it is identifiable: the model never uses
+  **Itaqui** (5–7% of MT grain in reality), because it can only reach it by 1,894 km
+  of truck, while real cargo goes by the Ferrovia Norte-Sul, which is not in the
+  network. The rest is month-to-month timing (storage between months) and
+  contracts. **MODEL.**
 
-So **R$30/t of unexplained northern friction** (≈ 5% of door-to-door cost) is what
-the data implies, and even then **8.6 pp of error remains**: a single-origin
-least-cost allocation cannot reproduce the split. The residual is structural —
-one origin (real MT has regions at very different distances from Santos),
-take-or-pay rail contracts, and terminal ownership. **MODEL** (fit);
-the reading of the friction as contracts/ownership is **SPECULATIVE**.
-
-This is the main methodological result: the cost-minimizing allocation that most
-of the corridor literature uses is, on its own, off by ~13 pp of market share.
+This is the main methodological result: a cost-minimizing allocation with one
+origin — the shape most corridor studies use — misprices market share by about
+eleven points, and most of that gap is origin geography, not corridor cost.
 
 ## 3. Pareto fronts (`results/fronts.csv`, `pareto_fronts_by_month.svg`)
 
@@ -161,11 +169,13 @@ split of a terminal's capacity between MT and other states.
 
 ## 8. What would change the conclusions
 
-- **Multiple origins.** The single Sorriso origin is the clearest defect: MT's
-  regions differ by ~1,000 km in distance to Santos, and USDA quotes separate
-  tariffs for North, Northeast and Southeast MT. This is the first thing to fix.
-- Take-or-pay rail and terminal-ownership constraints, which the fitted R$30/t
-  friction is standing in for.
+- **Itaqui via the Ferrovia Norte-Sul**, the one corridor with material volume
+  that the network cannot represent; adding it should absorb a chunk of the
+  remaining 7 pp.
+- **Sourced regional production weights** (IMEA) in place of the fitted 60/40
+  origin split.
+- Take-or-pay rail and terminal-ownership constraints.
+- Storage between months: the model must ship each month what that month produced.
 - Real interruption statistics (frequency and duration per corridor).
 - Correlated disruptions in the Monte Carlo (one blockade hits every truck).
 - Storage between months (turns layer 2 into a multi-period flow).

@@ -24,7 +24,7 @@
 <line x1="84" y1="56" x2="736" y2="56" stroke="#e4e2dc" stroke-width="1"/>
 <text x="76" y="60" text-anchor="end" font-size="12" fill="#52514e">20</text>
 <g clip-path="url(#plot)">
-<path d="M84 174.8 L116.6 205.2 L149.2 236.1 L181.8 256 L214.4 251.8 L247 246.4 L279.6 222.8 L312.2 212.8 L344.8 203.4 L377.4 202.9 L410 198.3 L442.6 196.7 L475.2 196.1 L507.8 195.1 L540.4 195.1 L573 195.1 L605.6 194.6 L638.2 194.6 L670.8 194.6 L703.4 193.2 L736 193.2 " fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray=""/>
+<path d="M84 205.3 L116.6 234 L149.2 257.9 L181.8 271.8 L214.4 270.7 L247 264.3 L279.6 248.9 L312.2 236.8 L344.8 226.3 L377.4 224.1 L410 217.8 L442.6 214.1 L475.2 213.7 L507.8 212.7 L540.4 212.7 L573 212.7 L605.6 213 L638.2 213 L670.8 213 L703.4 212.6 L736 212.6 " fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray=""/>
 </g>
 <line x1="84" y1="406" x2="736" y2="406" stroke="#8d8b85" stroke-width="1"/>
 <line x1="84" y1="56" x2="84" y2="406" stroke="#8d8b85" stroke-width="1"/>

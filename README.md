@@ -24,11 +24,14 @@ interruption probabilities are not (`docs/data-sources.md`).
    al. 2023) and re-routing after disruption in the Brazilian network (L'Her et al.
    2024) all exist. What survives as new is **seasonal capacity inside the
    optimization**, coupled to the front and to recourse, on the MT corridors.
-2. **The least-cost allocation does not reproduce reality.** Fed the volume MT
-   actually exported each month of 2024–2025, the model's port split is off by
-   **13 percentage points** on average — it over-uses the Arco Norte. One fitted
-   parameter (R$30/t of friction on the BR-163/BR-364 hauls) brings it to 8.6 pp
-   and no further: a single-origin least-cost model is structurally insufficient.
+2. **The least-cost allocation does not reproduce reality, and origin geography
+   is most of the gap.** Fed the volume MT actually exported each month of
+   2024–2025, a single-origin model's port split is off by **11 percentage points**
+   of market share. Splitting the state into the three origin regions USDA quotes
+   tariffs for (60% North MT / 40% eastern MT, fitted on 2024) brings it to
+   **7.0 pp out of sample** — better than a fitted cost fudge factor, and with no
+   invented cost. What survives includes Itaqui, which the model cannot reach
+   because the Ferrovia Norte-Sul is not in the network.
 3. **Railways lower the average cost, not the marginal cost and not the ceiling.**
    Ferrogrão cuts the average by 7–8% and fills its own capacity, while the last
    tonne still costs the same and the maximum exportable volume does not move;
@@ -76,7 +79,7 @@ results/                 generated CSV and SVG
 ```bash
 curl -fsSL https://bend-lang.com/install.sh | sh   # Bend 2 (tested with 2.0.25)
 make test      # 42 checks, ~2 s  -> "All checks passed."
-make figures   # regenerates results/, ~75 s on an M2 (validation included)
+make figures   # regenerates results/, ~4 min on an M2 (the origin-split grid dominates)
 make bench     # native build, 1/2/4/8 threads (needs clang >= 14; see Makefile)
 ```
 
