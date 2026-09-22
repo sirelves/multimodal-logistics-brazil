@@ -14,12 +14,16 @@ def SHIP() -> U32:
   3
 def XFER() -> U32:
   4
+# the Ferrovia Norte-Sul / Carajas corridor, which has its own published tariff
+def FNS() -> U32:
+  5
 
 def mode_name(+m: U32) -> String:
   Bool.pick(String, U32.is_eq(m, 0), "road",
     Bool.pick(String, U32.is_eq(m, 1), "rail",
       Bool.pick(String, U32.is_eq(m, 2), "barge",
-        Bool.pick(String, U32.is_eq(m, 3), "ship", "transfer"))))
+        Bool.pick(String, U32.is_eq(m, 3), "ship",
+          Bool.pick(String, U32.is_eq(m, 5), "rail", "transfer")))))
 
 # Freight = fixed(mode) + rate(mode) * km, in R$/t, fitted to USDA AgTransport
 # "Brazil soybean transportation" quarterly tables, 2024Q1-2025Q3, at R$5.5/US$:
@@ -33,11 +37,15 @@ def rate(+m: U32) -> F32:
   Bool.pick(F32, U32.is_eq(m, 0), 0.2294,
     Bool.pick(F32, U32.is_eq(m, 1), 0.1587,
       Bool.pick(F32, U32.is_eq(m, 2), 0.0992,
-        Bool.pick(F32, U32.is_eq(m, 3), 0.0, 0.0))))
+        Bool.pick(F32, U32.is_eq(m, 5), 0.1358,
+          Bool.pick(F32, U32.is_eq(m, 3), 0.0, 0.0)))))
 
+# The Norte-Sul tariff is a published ceiling, Tmax = 43.32 + 0.1358 * km R$/t
+# for grain on the northern stretch (ANTT, SUFER decision 2 of 2026-01-14).
 def fixed(+m: U32) -> F32:
   Bool.pick(F32, U32.is_eq(m, 0), 7.8,
-    Bool.pick(F32, U32.is_eq(m, 2), 20.9, 0.0))
+    Bool.pick(F32, U32.is_eq(m, 2), 20.9,
+      Bool.pick(F32, U32.is_eq(m, 5), 43.32, 0.0)))
 
 # ocean freight to Shanghai, R$/t, USDA 2024Q1-2025Q3 means at R$5.5/US$
 # (Santos 35.8, Paranagua 37.3, Santarem 38.8, Barcarena 39.6 US$/t;
@@ -64,21 +72,24 @@ def speed(+m: U32) -> F32:
   Bool.pick(F32, U32.is_eq(m, 0), 28.0,
     Bool.pick(F32, U32.is_eq(m, 1), 18.0,
       Bool.pick(F32, U32.is_eq(m, 2), 9.0,
-        Bool.pick(F32, U32.is_eq(m, 3), 24.0, 1.0))))
+        Bool.pick(F32, U32.is_eq(m, 3), 24.0,
+          Bool.pick(F32, U32.is_eq(m, 5), 14.0, 1.0)))))
 
 # baseline probability that one leg is interrupted during one trip
 def p_base(+m: U32) -> F32:
   Bool.pick(F32, U32.is_eq(m, 0), 0.020,
     Bool.pick(F32, U32.is_eq(m, 1), 0.010,
       Bool.pick(F32, U32.is_eq(m, 2), 0.010,
-        Bool.pick(F32, U32.is_eq(m, 3), 0.005, 0.010))))
+        Bool.pick(F32, U32.is_eq(m, 3), 0.005,
+          Bool.pick(F32, U32.is_eq(m, 5), 0.010, 0.010)))))
 
 # mean delay when a leg of that mode is interrupted, hours
 def delay(+m: U32) -> F32:
   Bool.pick(F32, U32.is_eq(m, 0), 72.0,
     Bool.pick(F32, U32.is_eq(m, 1), 96.0,
       Bool.pick(F32, U32.is_eq(m, 2), 240.0,
-        Bool.pick(F32, U32.is_eq(m, 3), 120.0, 120.0))))
+        Bool.pick(F32, U32.is_eq(m, 3), 120.0,
+          Bool.pick(F32, U32.is_eq(m, 5), 96.0, 120.0)))))
 
 # cost of one tonne standing still for one hour while a leg is interrupted,
 # R$/t/h: the idle vehicle (truck ~R$1,100/day for 37 t; barge, train and
@@ -87,7 +98,8 @@ def stall(+m: U32) -> F32:
   Bool.pick(F32, U32.is_eq(m, 0), 1.2,
     Bool.pick(F32, U32.is_eq(m, 1), 0.3,
       Bool.pick(F32, U32.is_eq(m, 2), 0.3,
-        Bool.pick(F32, U32.is_eq(m, 3), 0.15, 0.1))))
+        Bool.pick(F32, U32.is_eq(m, 3), 0.15,
+          Bool.pick(F32, U32.is_eq(m, 5), 0.3, 0.1)))))
 
 # cost of holding one tonne one hour (capital + storage + demurrage share), R$/t/h
 def vot() -> F32:

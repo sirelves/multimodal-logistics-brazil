@@ -42,12 +42,18 @@ def Fit.friction(+f: Fit) -> F32:
   Fit{a, b, c} = f
   c
 
-# Fitted on 2024 over the grid in results/validation_fit.csv: 60% of the
-# month's volume starts in North MT and the friction is not needed. How the
-# remaining 40% splits between Northeast and Southeast MT does not matter --
-# every split scores the same, because the model gives both regions the same
-# choices (Santos, Paranagua, Itaqui).
+# Sourced, not fitted: IBGE PAM municipal production (soybean + corn, 2023-2025)
+# aggregated over IMEA's macro-regions and normalized across the three origins
+# gives 49.7% North / 25.1% Northeast / 25.2% Southeast.
+def sourced() -> Fit:
+  Fit{0.497, 0.251, 0.0}
+
+# The headline model uses the sourced split: no free parameter is left.
 def best() -> Fit:
+  sourced()
+
+# The best the same model can do with the split fitted on 2024 instead.
+def fitted() -> Fit:
   Fit{0.6, 0.2, 0.0}
 
 def one_origin() -> Fit:
@@ -266,14 +272,16 @@ def main() -> IO(Unit):
         "itaqui_obs_kt", "itaqui_model_kt", "itaqui_obs_pct", "itaqui_model_pct"])
         ++ R.lines(rows(ms, 2024)) ++ R.lines(rows(ms, 2025)))
     IOF.write_file("results/validation_2024.svg",
-      chart(2024, "Solid = Comex Stat (soybean + corn, MT origin). Dashed = model with three origin regions, fitted on this year.", best()))
+      chart(2024, "Solid = Comex Stat (soybean + corn, MT origin). Dashed = model with three origin regions weighted by IBGE production.", best()))
     IOF.write_file("results/validation_2025.svg",
-      chart(2025, "Out of sample: the parameters fitted on 2024, applied to a year they never saw.", best()))
+      chart(2025, "The same model, no parameter fitted on either year: the origin split comes from IBGE production data.", best()))
     IOF.write_file("results/validation_one_origin.svg",
       chart(2025, "One origin, no friction: the plain least-cost allocation.", one_origin()))
-    IO.print("MAE three origins (fitted on 2024): 2024 " ++ R.fmt(mae(2024, best()), 2n) ++ " pp, 2025 out of sample "
-      ++ R.fmt(mae(2025, best()), 2n) ++ " pp")
+    IO.print("MAE three origins, split fitted:    2024 " ++ R.fmt(mae(2024, fitted()), 2n) ++ " pp, 2025 "
+      ++ R.fmt(mae(2025, fitted()), 2n) ++ " pp")
     IO.print("MAE one origin, no friction:        2024 " ++ R.fmt(mae(2024, one_origin()), 2n) ++ " pp, 2025 "
       ++ R.fmt(mae(2025, one_origin()), 2n) ++ " pp")
     IO.print("MAE one origin, friction fitted:    2024 " ++ R.fmt(mae(2024, one_origin_fitted()), 2n) ++ " pp, 2025 "
       ++ R.fmt(mae(2025, one_origin_fitted()), 2n) ++ " pp")
+    IO.print("MAE three origins, IBGE weights:    2024 " ++ R.fmt(mae(2024, sourced()), 2n) ++ " pp, 2025 "
+      ++ R.fmt(mae(2025, sourced()), 2n) ++ " pp")

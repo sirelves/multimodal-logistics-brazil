@@ -27,11 +27,11 @@ interruption probabilities are not (`docs/data-sources.md`).
 2. **The least-cost allocation does not reproduce reality, and origin geography
    is most of the gap.** Fed the volume MT actually exported each month of
    2024–2025, a single-origin model's port split is off by **11 percentage points**
-   of market share. Splitting the state into the three origin regions USDA quotes
-   tariffs for (60% North MT / 40% eastern MT, fitted on 2024) brings it to
-   **7.0 pp out of sample** — better than a fitted cost fudge factor, and with no
-   invented cost. What survives includes Itaqui, which the model cannot reach
-   because the Ferrovia Norte-Sul is not in the network.
+   of market share. Splitting the state into three origin regions, weighted by IBGE
+   municipal production, brings it to **7.4 pp with no fitted parameter at all**
+   (6.9 pp if the split is fitted instead). Part of what survives is Itaqui: at
+   ANTT's published tariff ceiling the Ferrovia Norte-Sul lands R$80/t above Santos
+   for eastern MT, so the model sends it nothing while reality sends it 5–7%.
 3. **Railways lower the average cost, not the marginal cost and not the ceiling.**
    Ferrogrão cuts the average by 7–8% and fills its own capacity, while the last
    tonne still costs the same and the maximum exportable volume does not move;

@@ -51,11 +51,12 @@ The test: give the model the volume Mato Grosso actually exported each month
 with the observed one, over the six modelled ports. Parameters are fitted on 2024
 and then applied unchanged to 2025.
 
-| variant | free parameters | 2024 (fitted) | 2025 (out of sample) |
+| variant | free parameters | 2024 | 2025 |
 |---|---|---|---|
 | one origin (Sorriso), corridor cost only | none | 10.3 pp | 11.0 pp |
-| one origin + a fitted friction on the northern hauls | 1 (R$30/t) | 7.3 pp | 7.7 pp |
-| **three origin regions, no friction** | 1 (the origin split) | **6.9 pp** | **7.0 pp** |
+| one origin + a fitted friction on the northern hauls | 1 (R$30/t, fitted on 2024) | 7.3 pp | 7.7 pp |
+| three origin regions, split fitted on 2024 | 1 (60/20/20) | 6.9 pp | 7.0 pp |
+| **three origin regions, split from IBGE production** | **none** | **8.0 pp** | **7.4 pp** |
 
 (pp = mean absolute error of the six port shares, averaged over 12 months.)
 
@@ -68,24 +69,26 @@ and then applied unchanged to 2025.
   only the southern corridors they actually use, beats the fitted friction *and*
   needs no invented cost. Adding the friction on top makes it worse: the two were
   substitutes for the same missing geography. **MODEL.**
-- **The fitted split is 60% North MT / 40% eastern MT**, which is the shape of the
-  state's production geography; how the 40% divides between Northeast and
-  Southeast does not matter here, because the model gives both the same options.
-  The split is fitted, not sourced — IMEA regional production would test it. **MODEL.**
+- **The split is now sourced, not fitted**: IBGE municipal production (soybean +
+  corn, 2023–2025) aggregated over IMEA's macro-regions gives **49.7% North /
+  25.1% Northeast / 25.2% Southeast**. With it the model has **no free parameter
+  at all** and still scores 7.4–8.0 pp; fitting the split buys ~0.5 pp (it lands on
+  60/20/20). The headline model uses the sourced weights. **MODEL** on sourced data.
 - **~7 pp of error survives.** The largest identifiable piece is **Itaqui**: 5–7%
   of MT grain leaves through it, the model sends none. Adding the Ferrovia
   Norte-Sul corridor (truck to Porto Nacional, then rail) **changed nothing** — the
   route is simply dearer than Santos for eastern MT:
 
-  | from Northeast MT (Canarana), June, R$/t door to door | Santos | Itaqui (FNS) | Paranaguá |
+  | from Northeast MT (Canarana), June, R$/t door to door | Santos | Itaqui (Norte-Sul) | Paranaguá |
   |---|---|---|---|
-  | generalized cost | **677** | 728 | 734 |
+  | generalized cost | **677** | 757 | 734 |
 
-  At Rumo-like tariffs the FNS would have to be **22% cheaper per t·km** to break
-  even. So the observed Itaqui flow is not cost-driven in this model: it comes from
-  contracts, Santos congestion the model does not represent, or a rail tariff below
-  the one assumed. Full table in `results/corridor_costs.csv`. **MODEL**; the
-  reading is **SPECULATIVE**, since no FNS tariff was found.
+  The rail leg now uses ANTT's published tariff **ceiling** for grain on the
+  northern Norte-Sul, Tmax = 43.32 + 0.1358 × km (SUFER decision 2 of 14 Jan 2026),
+  which puts Itaqui R$80/t above Santos for eastern MT. Since that is a ceiling and
+  real contracts are negotiated below it, the observed 5–7% is consistent with
+  either a much lower effective tariff or with volume that moves on contract rather
+  than on price. Full table in `results/corridor_costs.csv`. **MODEL.**
 
 This is the main methodological result: a cost-minimizing allocation with one
 origin — the shape most corridor studies use — misprices market share by about
@@ -170,7 +173,8 @@ road-price factor (USDA AgTransport 2024Q1–2025Q3); ocean freight per port to
 Shanghai (Santos R$197/t … Barcarena R$218/t — the Arco Norte is *more* expensive
 to China, the opposite of the neutral assumption used before); leg distances;
 terminal capacities (highest month of MT grain ever cleared through each port);
-the monthly volume to allocate; grain elevation R$55/t.
+the monthly volume to allocate; grain elevation R$55/t; the origin split (IBGE
+municipal production over IMEA macro-regions); the Norte-Sul tariff ceiling (ANTT).
 
 Still uncalibrated: interruption probabilities and delays (no published series),
 stall costs, value of time, the R$25/t re-planning fee, rail capacity, and the
@@ -178,11 +182,11 @@ split of a terminal's capacity between MT and other states.
 
 ## 8. What would change the conclusions
 
-- **A published FNS/VLI tariff**: the corridor is in the network now, but at an
-  assumed rate that makes Itaqui uneconomic. This is the one number that would
-  settle whether the missing 5–7% is price or contracts.
-- **Sourced regional production weights** (IBGE/IMEA) in place of the fitted 60/40
-  origin split.
+- **The effective (not ceiling) Norte-Sul and Carajás tariffs**, and the VLI
+  transshipment fee: the one set of numbers that would settle whether Itaqui's
+  5–7% is price or contract.
+- **Origins beyond the three modelled**: the western and central-southern
+  macro-regions are ~31% of MT production and have no node here.
 - Take-or-pay rail and terminal-ownership constraints.
 - Storage between months: the model must ship each month what that month produced.
 - Real interruption statistics (frequency and duration per corridor).

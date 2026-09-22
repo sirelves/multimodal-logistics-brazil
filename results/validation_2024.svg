@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" width="760" height="540" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif">
 <rect width="760" height="540" fill="#fcfcfb"/>
 <text x="84" y="24" text-anchor="start" font-size="16" fill="#0b0b0b"><tspan font-weight="600">Model vs reality: Mato Grosso grain by export port, 2024</tspan></text>
-<text x="84" y="42" text-anchor="start" font-size="12" fill="#52514e">Solid = Comex Stat (soybean + corn, MT origin). Dashed = model with three origin regions, fitted on this year.</text>
+<text x="84" y="42" text-anchor="start" font-size="12" fill="#52514e">Solid = Comex Stat (soybean + corn, MT origin). Dashed = model with three origin regions weighted by IBGE production.</text>
 <defs><clipPath id="plot"><rect x="84" y="56" width="652" height="350"/></clipPath></defs>
 <line x1="143.3" y1="56" x2="143.3" y2="406" stroke="#e4e2dc" stroke-width="1"/>
 <text x="143.3" y="424" text-anchor="middle" font-size="12" fill="#52514e">2</text>
@@ -27,13 +27,13 @@
 <text x="76" y="60" text-anchor="end" font-size="12" fill="#52514e">80</text>
 <g clip-path="url(#plot)">
 <path d="M84 205.2 L143.3 286.9 L202.5 199.3 L261.8 217.2 L321.1 203.9 L380.4 217.2 L439.6 247.6 L498.9 226.1 L558.2 207.5 L617.5 148.4 L676.7 108.8 L736 183.5 " fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray=""/>
-<path d="M84 231 L143.3 231 L202.5 231 L261.8 231 L321.1 231 L380.4 231 L439.6 231 L498.9 231 L558.2 148.3 L617.5 139.4 L676.7 93.4 L736 231 " fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
+<path d="M84 185.9 L143.3 185.9 L202.5 185.9 L261.8 185.9 L321.1 185.9 L380.4 185.9 L439.6 185.9 L498.9 185.9 L558.2 148.3 L617.5 139.4 L676.7 93.4 L736 185.9 " fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
 <path d="M84 297.8 L143.3 247.1 L202.5 290.2 L261.8 262 L321.1 277.9 L380.4 287.9 L439.6 276.6 L498.9 248.1 L558.2 269.1 L617.5 314.3 L676.7 350.2 L736 273.9 " fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray=""/>
-<path d="M84 360 L143.3 328.3 L202.5 294.8 L261.8 305.2 L321.1 307.7 L380.4 298.4 L439.6 288.8 L498.9 224 L558.2 323.9 L617.5 323 L676.7 406 L736 406 " fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
+<path d="M84 405.1 L143.3 373.3 L202.5 339.9 L261.8 350.3 L321.1 352.7 L380.4 343.5 L439.6 333.9 L498.9 269.1 L558.2 323.9 L617.5 323 L676.7 406 L736 406 " fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
 <path d="M84 351.1 L143.3 331.9 L202.5 357.3 L261.8 359.5 L321.1 359.5 L380.4 350.5 L439.6 329.1 L498.9 359.3 L558.2 339.5 L617.5 367.4 L676.7 371.5 L736 380.2 " fill="none" stroke="#eb6834" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray=""/>
 <path d="M84 291.3 L143.3 308.1 L202.5 325.8 L261.8 320.3 L321.1 319 L380.4 323.9 L439.6 329 L498.9 325.5 L558.2 321.1 L617.5 318.1 L676.7 281.1 L736 252.1 " fill="none" stroke="#eb6834" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
 <path d="M84 349 L143.3 347.3 L202.5 379.3 L261.8 383.3 L321.1 374.2 L380.4 358.9 L439.6 359.5 L498.9 385.1 L558.2 405.2 L617.5 399.8 L676.7 400.7 L736 386.4 " fill="none" stroke="#eda100" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray=""/>
-<path d="M84 304.2 L143.3 319.1 L202.5 334.9 L261.8 329.9 L321.1 328.8 L380.4 333.2 L439.6 337.7 L498.9 406 L558.2 406 L617.5 406 L676.7 406 L736 297.4 " fill="none" stroke="#eda100" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
+<path d="M84 304.2 L143.3 319.1 L202.5 334.9 L261.8 329.9 L321.1 328.8 L380.4 333.2 L439.6 337.7 L498.9 406 L558.2 406 L617.5 406 L676.7 406 L736 342.5 " fill="none" stroke="#eda100" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
 </g>
 <line x1="84" y1="406" x2="736" y2="406" stroke="#8d8b85" stroke-width="1"/>
 <line x1="84" y1="56" x2="84" y2="406" stroke="#8d8b85" stroke-width="1"/>

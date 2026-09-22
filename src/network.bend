@@ -156,6 +156,7 @@ def legs() -> List<&2, Leg>:
   +B = P.BARGE()
   +H = P.SHIP()
   +X = P.XFER()
+  +F = P.FNS()
   # road from the farm cluster (distances: USDA AgTransport legs; Sinop and
   # Lucas are short hops off the BR-163)
   [Leg{0, SOR(), SIN(), R, 80.0, 0.0, 0.0, big(), rp(), EXISTING()},
@@ -215,12 +216,13 @@ def legs() -> List<&2, Leg>:
    # Itaqui: elevation and ocean (USDA Sao Luis), capacity = observed peak
    Leg{40, ITQ(), ITQ_SHIP(), X, 0.0, P.elevation(), 48.0, 460.0, S.PORT_PEAK_NORTH(), EXISTING()},
    Leg{41, ITQ_SHIP(), CHN(), H, 22000.0, P.ocean_itaqui(), 0.0, big(), 0, EXISTING()},
-   # Ferrovia Norte-Sul: truck from eastern MT to the Porto Nacional terminal,
-   # then rail to Itaqui (distances approximate; no published intermodal tariff
-   # was found, so the rail rate is the same as Rumo's)
-   Leg{42, CAN(), PNC(), R, 700.0, 0.0, 0.0, big(), rp(), EXISTING()},
+   # Ferrovia Norte-Sul: truck from eastern MT to the Porto Nacional / Colinas
+   # terminals (Conab monitors Querencia-Colinas at 963 km), then rail to Itaqui
+   # (720 km on the Norte-Sul plus the Carajas stretch) at the ANTT tariff
+   # ceiling for grain, Tmax = 43.32 + 0.1358 * km
+   Leg{42, CAN(), PNC(), R, 950.0, 0.0, 0.0, big(), rp(), EXISTING()},
    Leg{43, PNC(), PNC_RAIL(), X, 0.0, 0.0, 24.0, 1000.0, 0, EXISTING()},
-   Leg{44, PNC_RAIL(), ITQ(), T, 1430.0, 0.0, 0.0, 1000.0, 0, EXISTING()}]
+   Leg{44, PNC_RAIL(), ITQ(), F, 1125.0, 0.0, 0.0, 1000.0, 0, EXISTING()}]
 
 def n_legs() -> Nat:
   45n

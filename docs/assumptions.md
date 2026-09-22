@@ -12,8 +12,10 @@ model is not the world — and `results.md` §2 measures exactly how far off it 
    Southeast MT / Primavera do Leste), with USDA tariffs for each, fed by a
    super-source whose arc capacities carry the origin split. Only the northern
    region has northern corridors, which is what the USDA quotes imply. The split
-   (60/40) is fitted on 2024, not sourced. Every result outside `results.md` §2
-   still uses the single Sorriso origin, to isolate corridor mechanisms.
+   comes from IBGE municipal production over IMEA's macro-regions (49.7 / 25.1 /
+   25.2), renormalized over the three: the western and central-southern regions,
+   ~31% of MT production, have no node. Every result outside `results.md` §2 still
+   uses the single Sorriso origin, to isolate corridor mechanisms.
 2. **Terminal capacity = revealed floor.** Each port's capacity is the highest
    month of MT grain ever cleared through it (Comex Stat 2023–2026). That is a
    lower bound on what is available to MT, not nameplate capacity, and it is
@@ -34,10 +36,11 @@ model is not the world — and `results.md` §2 measures exactly how far off it 
 6. **The friction parameter** (R$/t added to the northern truck hauls) is kept in
    the code and swept in `validation_friction.csv`, but the fitted model does not
    use it: with three origins its best value is zero.
-6b. **The Ferrovia Norte-Sul corridor to Itaqui** (truck 700 km to Porto Nacional,
-   rail 1,430 km) uses approximate distances and Rumo's rail rate, because no
-   published FNS tariff was found. At that rate the model never uses Itaqui,
-   while 5–7% of MT grain does.
+6b. **The Ferrovia Norte-Sul corridor to Itaqui** (truck 950 km to the Porto
+   Nacional / Colinas terminals, then 1,125 km of rail) uses approximate distances
+   and ANTT's tariff **ceiling** for grain. Real contracts settle below a ceiling,
+   so the corridor is modelled at its most expensive; even so the model never uses
+   it, while 5–7% of MT grain does.
 7. **Two railways as what-ifs.** Ferrogrão (planned) and the Rumo extension to
    Lucas do Rio Verde (under construction, 2031) use the same rail rate, speed and
    risk as the existing Rumo line. Their real tariffs are unknown; the Ferrogrão
